@@ -1,10 +1,10 @@
 %% Setup 
-startRun;
+StartLogger;
 experiment = 'handsOnly';
 dataDate = '20201218';
 %configuration = 'singleLightClose';
 integrationTime = 200;
 normalization = 'byPixel';
 
-initialization;
+Initialization;
 db = GetDB(); 
