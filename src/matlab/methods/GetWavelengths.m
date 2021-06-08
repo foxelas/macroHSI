@@ -16,7 +16,7 @@ end
 
 switch option
     case 'raw'
-        splitWavelength = getSetting('splitWavelength');
+        splitWavelength = GetSetting('splitWavelength');
         if m == 401
             x = 380:780;
         elseif m == 36

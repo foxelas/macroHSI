@@ -10,13 +10,13 @@ end
 
 [m,n,z] = size(spectralImage);
 if (z < 401)
-    v = getWavelengths(z, 'index');
+    v = GetWavelengths(z, 'index');
     spectralImage2 = zeros(m,n,401); 
     spectralImage2(:,:,v) = spectralImage;
     spectralImage =  spectralImage2;
     clear 'spectralImage2';
 end 
-if hasGPU()
+if HasGPU()
     spectralImage_ = gpuArray(spectralImage);
 else 
     spectralImage_ = spectralImage;
@@ -28,10 +28,10 @@ switch method
         %[lambda, xFcn, yFcn, zFcn] = colorMatchFcn('CIE_1964');
         colImage = double(reshape(spectralImage_, [m*n,z]));
         
-        [xyz, illumination] = prepareParams(z);
+        [xyz, illumination] = PrepareParams(z);
         normConst = double(max(max(colImage)));
         colImage = colImage ./ normConst;
-        colImage = bsxfun(@times, colImage, illumination');
+        colImage = bsxfun(@times, colImage, illumination);
         colXYZ = colImage * squeeze(xyz);
         clear 'colImage';
         
@@ -49,7 +49,7 @@ switch method
         error('Unsupported method for display image reconstruction');
 end 
 
-if hasGPU()
+if HasGPU()
     dispImage = gather(dispImage_);
 else 
     dispImage = dispImage_;
@@ -57,13 +57,13 @@ end
     
 end 
 
-function [xyz, illumination] = prepareParams(z)
+function [xyz, illumination] = PrepareParams(z)
 filename = 'parameters/getDisplayHSIparams.mat';
 if ~exist(filename, 'file')
-    lambdaIn = getWavelengths(z, 'raw');    
+    lambdaIn = GetWavelengths(z, 'raw');    
     [lambdaMatch, xFcn, yFcn, zFcn] = colorMatchFcn('1964_FULL');
     xyz = interp1(lambdaMatch', [xFcn; yFcn; zFcn]', lambdaIn, 'pchip', 0);
-    [solaxSpec, lambdaMatch] = getSolaxSpectra();
+    [solaxSpec, lambdaMatch] = GetSolaxSpectra();
     illumination = interp1(lambdaMatch, solaxSpec', lambdaIn, 'pchip', 0);
     save('parameters/getDisplayHSIparams.mat', 'xyz', 'illumination');
 else 

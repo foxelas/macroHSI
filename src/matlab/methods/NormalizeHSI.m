@@ -8,10 +8,10 @@ function spectralData = NormalizeHSI(targetName, option)
 %
 
 if nargin < 2 || isempty(option)
-    option = getSetting('normalization');
+    option = GetSetting('normalization');
 end
 
-basedir = fullfile(getSetting('matdir'), strcat(getSetting('database'), 'Triplets'), targetName);
+basedir = fullfile(GetSetting('matdir'), strcat(GetSetting('database'), 'Triplets'), targetName);
 
 targetFilename = strcat(basedir, '_target.mat'); 
 load(targetFilename, 'spectralData');

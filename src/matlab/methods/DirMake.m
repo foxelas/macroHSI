@@ -12,7 +12,7 @@ end
 filedir = fileparts(filepath);
 if ~exist(filedir, 'dir')
     mkdir(filedir);
-    if  ~contains(filedir, getSetting('savedir'))
+    if  ~contains(filedir, GetSetting('savedir'))
         addpath(filedir);
     end
 end

@@ -5,12 +5,12 @@ function [spectralData, imageXYZ, wavelengths] = LoadH5Data(filename)
 %   returns spectralData, XYZ image and capture wavelengths
 %
 
-database = getSetting('database');
+database = GetSetting('database');
 filename = strrep(filename, '.hsm', '.h5');
-saveFilename = mkNewDir(getSetting('matdir'), database, strcat(filename, '.mat'));
+saveFilename = DirMake(GetSetting('matdir'), database, strcat(filename, '.mat'));
 
 if ~exist(saveFilename, 'file')    
-    currentFile = adjustFilename(filename);
+    currentFile = AdjustFilename(filename);
     %h5disp(currentFile);
     %h5info(currentFile);
    
@@ -29,8 +29,8 @@ end
 
 end
 
-function currentFile = adjustFilename(filename)
-indir = getSetting('datadir');
+function currentFile = AdjustFilename(filename)
+indir = GetSetting('datadir');
 
 filenameParts = strsplit(filename, '_');
 dataDate = filenameParts{1};

@@ -13,26 +13,26 @@ end
 
 switch method
     case 'real'
-        settingsDir = getSetting('datasetSettingsDir');
+        settingsDir = GetSetting('datasetSettingsDir');
         inTable = delimread(fullfile(settingsDir, 'LE-9ND55F.csv'), ',', 'num');
         wavelengths = inTable.num(:,1);
         solaxSpec = inTable.num(:,2);
         sunSpec = inTable.num(:,3);
         
         if showImage
-            plotSolaxSpectra(wavelengths, solaxSpec, sunSpec);
+            PlotSolaxSpectra(wavelengths, solaxSpec, sunSpec);
         end 
         
     case 'reconstructed'
-        savedir = getSetting('savedir');
-        [solaxSpec, wavelengths] = reconstructSolaxIoIlluminationSpectrum(savedir);
+        savedir = GetSetting('savedir');
+        [solaxSpec, wavelengths] = ReconstructSolaxIoIlluminationSpectrum(savedir);
     otherwise 
         error('Unsupported case for solax-io spectra reconstruction');
 end
 
 end 
 
-function [solaxSpec, x] = reconstructSolaxIoIlluminationSpectrum(savedir)
+function [solaxSpec, x] = ReconstructSolaxIoIlluminationSpectrum(savedir)
 %savedir = "D:\temp\Google Drive\titech\research\experiments\output\5. Progress Reports\img";
 
 x = [350, 360, 370, 380, 400, 410, 425, 450, 460, 480, 520, 525, 530, 575, 620, 625, 630, 640, 660, 690, 695, 700, 725, 750, 800]';
@@ -93,9 +93,9 @@ save('parameters/solax_reconstructed_spectrum.mat', 'solaxSpec', 'solaxLocalMaxW
 end
 
 
-function [] = plotSolaxSpectra(wavelengths, solaxSpec, sunSpec)
+function [] = PlotSolaxSpectra(wavelengths, solaxSpec, sunSpec)
 
-savedir = getSetting('savedir');
+savedir = GetSetting('savedir');
 
 fig4 = figure(4);
 x = wavelengths;

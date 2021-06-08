@@ -1,4 +1,4 @@
-function [filename, tableId, outRow] = GetFilename(configuration, content, integrationTime, target, dataDate, id)
+function [filename, tableId, outRow] = GetFilename(configuration, content, integrationTime, target, dataDate, id, specialTarget)
 %% GetFilename Gets the respective filename for configuration value
 %   arguments are received in the order of 
 %     'configuration' [light source]
@@ -6,39 +6,26 @@ function [filename, tableId, outRow] = GetFilename(configuration, content, integ
 %     'integrationTime' [value of integration time]
 %     'target' [details about captured object]
 %     'dataDate' [catpureDate]
-%     'id' [number value for id ]
+%     'id' [number value for id ] 
 
-warning('off', 'MATLAB:table:ModifiedAndSavedVarnames');
-dataTable = readtable(fullfile(getSetting('datasetSettingsDir'), strcat(getSetting('database'), 'DB.xlsx')), 'Sheet','capturedData');
+if nargin < 6 
+    id = [];
+end 
+
+if ~isempty(id) && id < 0 
+    id = [];
+end 
+
+if nargin < 7
+    specialTarget = ''; 
+end 
 
 if ~isempty(integrationTime)
     initialIntegrationTime = integrationTime;
-else 
-    initialIntegrationTime = [];
-end 
+end
 
-setId = ismember(dataTable.Configuration, configuration);
-if nargin >= 2 && ~isempty(content)
-    setId = setId & ismember(dataTable.Content, content);
-end 
-if nargin >= 3 && ~isempty(integrationTime)
-    setId = setId & ismember(dataTable.IntegrationTime, integrationTime);
-end 
-if nargin >= 4 && ~isempty(target)
-    setId = setId & ismember(dataTable.Target, target);
-end 
-if nargin >= 5 && ~isempty(dataDate)
-    setId = setId & ismember(dataTable.CaptureDate, str2num(dataDate));
-end 
-if nargin >= 6 && ~isempty(id)
-    setId = setId & ismember(dataTable.ID, id);
-end 
-
-outRow = dataTable(setId,:);
-if sum(setId) > 1 
-    warning('Taking the first from multiple rows that satisfy the conditions.');
-    outRow = outRow(1,:);
-end 
+[~, ~, outRow] = Query(configuration, content, integrationTime, target, dataDate, id);
+outRow = CheckOutRow(outRow, configuration, content, integrationTime, specialTarget, dataDate, id);
 
 filename = outRow.Filename{1};
 tableId = outRow.ID;
@@ -52,5 +39,22 @@ if nargin >= 3 && ~isempty(integrationTime) &&  integrationTime ~= outRow.Integr
 %     setSetting('integrationTime', integrationTime);
 end
 
+end
 
+function [outR] = CheckOutRow(inR, configuration, content, integrationTime, specialTarget, dataDate, id)
+    outR = inR; 
+    if isempty(inR.ID) && ~isempty(specialTarget)
+        if strcmp(specialTarget, 'black')
+            configuration = 'noLight';
+        end
+        [~, ~, outR] = Query(configuration, content, integrationTime, specialTarget, dataDate, id);  
+        if isempty(outR.ID) && strcmp(specialTarget, 'black')
+            [~, ~, outR] = Query(configuration, 'capOn', integrationTime, specialTarget, '20210107', id);
+        end 
+    end 
+
+    if numel(outR.ID) > 1 
+        warning('Taking the first from multiple rows that satisfy the conditions.');
+        outR = outR(1,:);
+    end
 end

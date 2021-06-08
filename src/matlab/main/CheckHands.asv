@@ -7,7 +7,6 @@ integrationTime = 200;
 normalization = 'byPixel';
 
 Initialization;
-
 SetSetting('cropBorders', true);
 
 %% Read h5 data 
@@ -24,18 +23,10 @@ for i = 1:length(targetIDs)
     SetSetting('dataDate', num2str(dates(i)));
     SetSetting('configuration', configurations{i});
     
-    targetName = num2str(id);
-    spectralData = ReadStoredHSI(targetName);
+    spectralData = NormalizeHSI(num2str(id));
     dispImage = GetDisplayImage(rescale(spectralData), 'rgb');
     figure(1); 
     imshow(dispImage);
-    SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'), 'rgb', StrrepAll(filenames{i})));
+    SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'), GetSetting('normalization'), StrrepAll(filenames{i})));
     SavePlot(1);
-    
-    spectralData = NormalizeHSI(targetName);
-    dispImage = GetDisplayImage(rescale(spectralData), 'rgb');
-    figure(2); 
-    imshow(dispImage);
-    SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'), 'normalized', StrrepAll(filenames{i})));
-    SavePlot(2);
 end 

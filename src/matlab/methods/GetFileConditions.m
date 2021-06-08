@@ -5,12 +5,12 @@ function [fileConditions] = GetFileConditions(content, target, id)
 %   Usage: 
 %   fileConditions = GetFileConditions(content, target)
 
-    fileConditions = {getSetting('configuration'), [], ...
-        getSetting('integrationTime'), target, getSetting('dataDate')};
+    fileConditions = {GetSetting('configuration'), [], ...
+        GetSetting('integrationTime'), target, GetSetting('dataDate')};
     
     if nargin > 1 
-        fileConditions = {getSetting('configuration'), content, ...
-        getSetting('integrationTime'), target, getSetting('dataDate')};
+        fileConditions = {GetSetting('configuration'), content, ...
+        GetSetting('integrationTime'), target, GetSetting('dataDate')};
     end 
     
     if nargin > 2 
