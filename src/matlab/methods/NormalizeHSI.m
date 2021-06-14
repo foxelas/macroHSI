@@ -62,8 +62,7 @@ if useBlack
         whiteReflectance = whiteReflectance(any(cropMask, 2), any(cropMask, 1), :);
         warning('Crop the image value: white');
     end
-    normDenominator = whiteReflectance - blackReflectance;
-    spectralData = (spectralData - blackReflectance) ./ normDenominator;
+    NormalizeImage(spectralData, whiteReflectance, blackReflectance);
 end   
 
 spectralData = max(spectralData, 0);

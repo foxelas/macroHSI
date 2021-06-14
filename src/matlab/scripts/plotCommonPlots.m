@@ -10,7 +10,7 @@ SetSetting('plotName', fullfile(GetSetting('savedir'), '1_Common', 'interpColorM
 title('Interpolated Color Matching Functions');
 xlabel('Wavelength (nm)');
 ylabel('Weight (a.u.)');
-savePlot(1);
+SavePlot(1);
 
 figure(2);
 plot(lambdaIn, illumination, 'DisplayName', 'Solax-iO');
@@ -19,4 +19,4 @@ title('Illumination');
 xlabel('Wavelength (nm)');
 ylabel('Radiant Intensity (a.u.)');
 legend();
-savePlot(2);
+SavePlot(2);

@@ -10,8 +10,7 @@ function [mask, maskedPixels] = GetMaskFromFigure(I)
     [m,n,~] = size(I);
     
     mask = roipoly(Irgb);
+    title('Draw polygon')
     
-    IFlat = reshape(I, [m*n, w]);
-    maskFlat = reshape(mask, [m*n, 1]);
-    maskedPixels = IFlat(maskFlat, :);
+    maskedPixels = GetPixelsFromMask(I, mask);
 end

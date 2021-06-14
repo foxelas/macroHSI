@@ -17,8 +17,8 @@ function [] = PlotSubimageMontage(hsi, figTitle, limit, fig)
     
     montage(imageList)
     title(figTitle);
-    %colorbar();
-    %colormap('jet');
+    colorbar();
+    colormap('jet');
     
-    %SavePlot(fig);
+    SavePlot(fig);
 end 
