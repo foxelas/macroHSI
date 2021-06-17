@@ -76,22 +76,37 @@ def load_black_mat(fname, varname):
     hsi = load_from_mat73(fname + '_black.mat', varname) 
     return hsi
 
-def load_hsi(folder, indexes, hasNorm=0, varname='hsi'):
+def load_hsi(folder, indexes=None, hasNorm=0, varname='hsi'):
     hsis = []
-    for i in range(len(indexes)):
-        basefname = os.path.join(folder, str(indexes[i]))
-        hsi = load_target_mat(basefname, 'spectralData')
-        if hasNorm == 1: 
-            white = load_white_mat(basefname, 'spectralData')
-            black = load_black_mat(basefname, 'spectralData')
-            normhsi = normalize_hsi(hsi, white, black)
-            hsis.append(normhsi)
-        else:
+    if indexes is None:
+        origListdir = get_filenames(folder, '.mat')
+        for filename in origListdir:
+            hsi = load_from_mat73(filename, 'img')
             hsis.append(hsi)
+    else:
+        for i in range(len(indexes)):
+            basefname = os.path.join(folder, str(indexes[i]))
+            hsi = load_target_mat(basefname, 'spectralData')
+            if hasNorm == 1: 
+                white = load_white_mat(basefname, 'spectralData')
+                black = load_black_mat(basefname, 'spectralData')
+                normhsi = normalize_hsi(hsi, white, black)
+                hsis.append(normhsi)
+            else:
+                hsis.append(hsi)
     return hsis
 
 ######################### Process #########################
 
+def crop_image_middle(img, st):
+    sb = np.array(img.shape)
+    mid = np.floor(st/2)
+    rem = np.ceil(st/2 - mid)
+    fn1 = [int(x) for x in sb/2-mid + rem]
+    fn2 = [int(x) for x in sb/2+mid]
+    imCrop = img[fn1[0]:fn2[0],fn1[1]:fn2[1],:]
+    return imCrop
+    
 def normalize_hsi(hsi, white, black):
     normhsi = (hsi - black)  / (white - black + 0.0000001)
     return normhsi
