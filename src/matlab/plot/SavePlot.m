@@ -20,7 +20,7 @@ if (saveImages)
         DirMake(filepath);
         DirMake(filepathBW);
 
-        filename = fullfile(filepath, strcat(name, '.png'));
+        filename = fullfile(filepath, strcat(name, '.jpg'));
         filename = strrep(filename, ' ', '_');
         if (cropBorders)
             warning('off');

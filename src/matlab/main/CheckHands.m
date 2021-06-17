@@ -38,4 +38,9 @@ for i = 1:length(targetIDs)
     imshow(dispImage);
     SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'), 'normalized', StrrepAll(filenames{i})));
     SavePlot(2);
-end 
+end
+
+path1 = fullfile(GetSetting('savedir'), GetSetting('experiment'), 'normalized');
+Plots(1, @MontageFolderContents, path1, '*.jpg', 'Normalized');
+path1 = fullfile(GetSetting('savedir'), GetSetting('experiment'), 'rgb');
+Plots(2, @MontageFolderContents, path1, '*.jpg', 'sRGB');
