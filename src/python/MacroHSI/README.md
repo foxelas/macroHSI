@@ -1,5 +1,4 @@
-# HSKL: Hyperspectral-scikit-learn
-
+## Macro HSI
 Tools for *Macropathology Hyper-Spectral Image* Processing
 
 ## Status
