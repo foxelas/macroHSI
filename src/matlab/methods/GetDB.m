@@ -4,5 +4,5 @@ function dataTable = GetDB()
 %   Usage:
 %   dataTable = GetDB()
 
-dataTable = readtable(fullfile(GetSetting('datasetSettingsDir'), strcat(GetSetting('database'), 'DB.xlsx')), 'Sheet','capturedData');
-end 
+dataTable = readtable(fullfile(GetSetting('datasetSettingsDir'), strcat(GetSetting('database'), 'DB.xlsx')), 'Sheet', 'capturedData');
+end

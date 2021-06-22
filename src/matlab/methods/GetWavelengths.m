@@ -35,11 +35,11 @@ switch option
         else
             error('Unsupported wavelength range');
         end
-        
+
     case 'index'
         x = GetWavelengths(m, 'raw');
         x = x - 380 + 1;
-        
+
     case 'babel'
         if m == 36
             x = 1:36;
@@ -50,10 +50,10 @@ switch option
         else
             error('Unsupported wavelengths range');
         end
-        
+
     otherwise
         error('Unsupported option.')
-        
+
 end
 
 end

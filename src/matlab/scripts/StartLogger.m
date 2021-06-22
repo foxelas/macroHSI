@@ -1,8 +1,9 @@
-%% Starts the logger and closes figures 
+
+%% Starts the logger and closes figures
 close all;
-clc; 
+clc;
 diary off
 delete log.txt
 diary log.txt
 
-datestr(now) ;
+datestr(now);

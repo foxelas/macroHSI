@@ -11,11 +11,11 @@ end
 tmp = delimread(inputSettingsFile, {', '}, 'raw');
 options = struct();
 for i = 1:length(tmp.raw)
-    
+
     parameterName = tmp.raw{i, 1};
     rawValue = tmp.raw{i, 2};
     varType = tmp.raw{i, 3};
-    
+
     if isempty(rawValue)
         switch parameterName
             case 'matfilein'
@@ -34,11 +34,11 @@ for i = 1:length(tmp.raw)
                 rawValue = fullfile('..\..\..\output\', options.('dataset'));
         end
     end
-    
+
     if ~isempty(rawValue) && strcmp(parameterName, 'savedir')
         rawValue = fullfile('..\..\..\output\', rawValue);
     end
-    
+
     switch varType
         case 'string'
             value = strrep(rawValue, ' ', ''); %string(rawValue)
@@ -51,13 +51,13 @@ for i = 1:length(tmp.raw)
         case 'doubleArray'
         case 'stringArray'
             value = getStringArray(rawValue);
-            
+
         otherwise
             fprintf('Unsupported type %s for parameter %s.\n', varType, parameterName);
     end
     options.(parameterName) = value;
     eval([parameterName, '=options.', parameterName, ';']);
-    
+
 end
 
 options = orderfields(options);

@@ -4,15 +4,15 @@ function [outname] = StrrepAll(inname, isLegacy)
 %     Usage:
 %     [outname] = StrrepAll(inname)
 
-if nargin < 2 
+if nargin < 2
     isLegacy = false;
-end 
+end
 
 [~, outname] = fileparts(inname);
 
 str = '_';
 if isLegacy
-    str = ' '; 
+    str = ' ';
 end
 
 outname = strrep(outname, '\', str);
@@ -21,5 +21,5 @@ outname = strrep(outname, ' ', str);
 
 outname = strrep(outname, '.csv', '');
 outname = strrep(outname, '.mat', '');
-    
+
 end

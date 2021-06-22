@@ -1,35 +1,36 @@
 function [spectralData] = ReadHSIData(content, target, experiment, blackIsCapOn)
-%%ReadHSIData returns the three images necessary for data analysis 
+%%ReadHSIData returns the three images necessary for data analysis
 %
 %   Usage:
 %   [raw] = ReadHSIData(target, experiment, blackIsCapOn)
- 
+
 if nargin < 4
-    blackIsCapOn = false; 
-end 
+    blackIsCapOn = false;
+end
 
 baseDir = DirMake(GetSetting('matdir'), strcat(GetSetting('database'), 'Triplets\'));
 
-%% Target image 
+%% Target image
 fcTarget = GetFileConditions(content, target);
 [filename, tableId] = GetFilename(fcTarget{:});
 saveName = fullfile(baseDir, num2str(tableId));
 [spectralData, ~, ~] = LoadH5Data(filename);
 
 if ~exist(strcat(saveName, '_target.mat'), 'file') || ~exist(strcat(saveName, '_black.mat'), 'file') || ~exist(strcat(saveName, '_white.mat'), 'file')
-    figure(1); 
+    figure(1);
     imshow(GetDisplayImage(spectralData, 'rgb'));
     SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'), strcat(target, '_', num2str(GetSetting('integrationTime')))));
     SavePlot(1);
     %save(strcat(saveName, '_target.mat'), 'spectralData', '-v7.3');
 
     if ~strcmp(GetSetting('normalization'), 'raw')
-        %% White image 
+
+        %% White image
         fcWhite = GetFileConditions('whiteReflectance', target);
         fcWhite = [fcWhite, -1, 'white'];
         filename = GetFilename(fcWhite{:});
         [white, ~, wavelengths] = LoadH5Data(filename);
-        figure(2); 
+        figure(2);
         imshow(GetDisplayImage(white, 'rgb'));
         SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'), strcat('0_white_', num2str(GetSetting('integrationTime')))));
         SavePlot(2);
@@ -40,32 +41,32 @@ if ~exist(strcat(saveName, '_target.mat'), 'file') || ~exist(strcat(saveName, '_
         Plots(4, @PlotSpectra, uniSpectrum, wavelengths, '99%-white', 'Reflectance Spectrum of White Balance Sheet');
 
         %%BandMax
-        [m,n,w] = size(white);
-        bandmaxSpectrum = max(reshape(white, m * n, w), [], 1);
-        SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'),  strcat('0_white_bandmax_', num2str(GetSetting('integrationTime')))));
+        [m, n, w] = size(white);
+        bandmaxSpectrum = max(reshape(white, m*n, w), [], 1);
+        SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'), strcat('0_white_bandmax_', num2str(GetSetting('integrationTime')))));
         Plots(5, @PlotSpectra, bandmaxSpectrum, wavelengths, 'Bandmax spectrum', 'Bandmax Spectrum for the current Image');
 
-        fullReflectanceByPixel = white;    
+        fullReflectanceByPixel = white;
         %save(strcat(saveName, '_white.mat'), 'fullReflectanceByPixel', 'uniSpectrum', 'bandmaxSpectrum', '-v7.3');
 
-        %% Black Image 
-        if blackIsCapOn 
+        %% Black Image
+        if blackIsCapOn
             fcBlack = GetFileConditions('capOn', target);
-        else 
+        else
             fcBlack = GetFileConditions('lightsOff', target);
         end
         fcBlack = [fcBlack, -1, 'black'];
         filename = GetFilename(fcBlack{:});
         [blackReflectance, ~, ~] = LoadH5Data(filename);
-        figure(3); 
+        figure(3);
         imshow(GetDisplayImage(blackReflectance, 'rgb'));
         SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'), strcat('0_black_', num2str(GetSetting('integrationTime')))));
         SavePlot(3);
 
         save(strcat(saveName, '_black.mat'), 'blackReflectance', '-v7.3');
-    else 
+    else
         disp('Read only capture data, ignore white and black images.');
-    end 
-end 
+    end
+end
 
-end 
+end

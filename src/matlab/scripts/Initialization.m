@@ -1,3 +1,4 @@
+
 %% Initialization
 disp('Initialization started');
 
@@ -57,8 +58,7 @@ if exist('normalization', 'var')
 end
 
 if exist('colorPatchOrder', 'var')
-    SetSetting('colorPatchOrder',  colorPatchOrder); 
-end 
+    SetSetting('colorPatchOrder', colorPatchOrder);
+end
 
 disp('Initialization finished');
-

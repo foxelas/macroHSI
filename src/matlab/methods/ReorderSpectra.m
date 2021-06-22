@@ -3,7 +3,7 @@ function [reorderedSpectra, labels] = ReorderSpectra(target, chartColorOrder, sp
 % i.e. match babel order to colorchart order
 %
 %   Usage:
-%    [reorderedSpectra, labels] = ReorderSpectra(target, chartColorOrder, 
+%    [reorderedSpectra, labels] = ReorderSpectra(target, chartColorOrder,
 %       spectraColorOrder, wavelengths, spectralWavelengths)
 
 if size(target, 2) == 401

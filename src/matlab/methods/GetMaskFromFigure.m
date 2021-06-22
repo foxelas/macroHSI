@@ -5,16 +5,16 @@ function [mask, maskedPixels] = GetMaskFromFigure(I)
 %   Usage:
 %   [mask, maskedPixels] = GetMaskFromFigure(I)
 
-    [~,~,w] = size(I);
-    if w > 3
-        Irgb = GetDisplayImage(I);
-    else 
-        Irgb = I;
-    end 
-    [m,n,~] = size(I);
-    
-    mask = roipoly(Irgb);
-    title('Draw polygon')
-    
-    maskedPixels = GetPixelsFromMask(I, mask);
+[~, ~, w] = size(I);
+if w > 3
+    Irgb = GetDisplayImage(I);
+else
+    Irgb = I;
+end
+[m, n, ~] = size(I);
+
+mask = roipoly(Irgb);
+title('Draw polygon')
+
+maskedPixels = GetPixelsFromMask(I, mask);
 end

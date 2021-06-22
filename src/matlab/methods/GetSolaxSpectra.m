@@ -10,28 +10,28 @@ if nargin < 1
 end
 if nargin < 2
     showImage = false;
-end 
+end
 
 switch method
     case 'real'
         settingsDir = GetSetting('datasetSettingsDir');
         inTable = delimread(fullfile(settingsDir, 'LE-9ND55F.csv'), ',', 'num');
-        wavelengths = inTable.num(:,1);
-        solaxSpec = inTable.num(:,2);
-        sunSpec = inTable.num(:,3);
-        
+        wavelengths = inTable.num(:, 1);
+        solaxSpec = inTable.num(:, 2);
+        sunSpec = inTable.num(:, 3);
+
         if showImage
             PlotSolaxSpectra(wavelengths, solaxSpec, sunSpec);
-        end 
-        
+        end
+
     case 'reconstructed'
         savedir = GetSetting('savedir');
         [solaxSpec, wavelengths] = ReconstructSolaxIoIlluminationSpectrum(savedir);
-    otherwise 
+    otherwise
         error('Unsupported case for solax-io spectra reconstruction');
 end
 
-end 
+end
 
 function [solaxSpec, x] = ReconstructSolaxIoIlluminationSpectrum(savedir)
 %savedir = "D:\temp\Google Drive\titech\research\experiments\output\5. Progress Reports\img";
@@ -101,7 +101,7 @@ savedir = GetSetting('savedir');
 fig4 = figure(4);
 x = wavelengths;
 h(1) = plot(x, solaxSpec, 'r', 'LineWidth', 3, 'DisplayName', 'Solax-iO');
-hold on 
+hold on
 h(2) = plot(x, sunSpec, 'b', 'LineWidth', 3, 'DisplayName', 'Sun');
 hold off
 ylim([0, 100]);

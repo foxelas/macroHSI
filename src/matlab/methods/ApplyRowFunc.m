@@ -7,12 +7,12 @@ function result = ApplyRowFunc(funcName, varargin)
 %
 
 expectedArgs = nargin(funcName);
-if expectedArgs < 0 
+if expectedArgs < 0
     expectedArgs = numel(varargin);
-end 
+end
 
 rows = size(varargin{1}, 1);
-result = cell(rows,1);
+result = cell(rows, 1);
 newVarargin = cell(1, expectedArgs);
 for i = 1:rows
     for j = 1:expectedArgs

@@ -4,6 +4,6 @@ function [value] = GetValueFromTable(tab, field, id)
 %   Usage:
 %   value = GetValueFromTable(tab, field, id)
 
-    column = tab.(field);
-    value = column{id};
-end 
+column = tab.(field);
+value = column{id};
+end

@@ -21,7 +21,7 @@ switch options
             outSpectrum = zeros(36, 1);
         end
         outSpectrum(x) = inSpectrum;
-        
+
     case 'del'
         isPadded = true;
         if m == 36
@@ -31,19 +31,19 @@ switch options
         else
             isPadded = false;
         end
-        
+
         if isPadded && isempty(nonzeros(inSpectrum(1:cutoff)))
             idStart = find(inSpectrum, 1);
             outSpectrum = inSpectrum(idStart:end);
-            
+
         elseif isPadded && isempty(nonzeros(inSpectrum((end -cutoff):end)))
             idEnd = find(inSpectrum, 1, 'last');
             outSpectrum = inSpectrum(1:idEnd);
-            
+
         else
             outSpectrum = inSpectrum;
         end
-        
+
     otherwise
         error('Unsupported options');
 end

@@ -1,5 +1,5 @@
 function [] = PlotDualMontage(left, right, figTitle, fig)
-% PlotDualMontage Plots two images side by side 
+% PlotDualMontage Plots two images side by side
 %
 %   Usage:
 %   PlotDualMontage(left, right, figTitle, fig)

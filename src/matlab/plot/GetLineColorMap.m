@@ -21,20 +21,20 @@ switch style
     case 'custom'
         key = names;
         value = jet(length(names));
-    otherwise 
+    otherwise
         key = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'};
         value = jet(10);
 end
 
 if ~isvector(value)
     v = cell(size(value, 1), 1);
-    for i = 1:size(value,1)
-        v{i} = value(i,:);
+    for i = 1:size(value, 1)
+        v{i} = value(i, :);
     end
     value = v;
 end
 
-if size(value,1) == 1
+if size(value, 1) == 1
     value = {value};
 end
 lineColorMap = containers.Map(key, value);
