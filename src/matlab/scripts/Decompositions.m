@@ -39,65 +39,29 @@ end
 %% Select methods, dataset
 method = 'rica'; %'pca', 'rica'
 X = Xmask; %Xmask  Xraw
+
 curdir = 'python\ica'; %'python\ica' 'python\pca'
 folder = 'exp4_norm_cropped_sample_only'; %'exp4_norm_cropped_sample_only'; %'exp3_norm_cropped'; %'exp1_raw_full';
 saveto = fullfile(GetSetting('savedir'), curdir, folder);
 DirMake(saveto);
+SetSetting('savedir', saveto);
 
-%% PCA
-if strcmp(method, 'pca')
-    [coeff, scores, latent, tsquared, explained] = pca(X, 'NumComponents', 10);
+q = 10;
+[coeff, scores, latent, explained, objective] = Dimred(X, method, q);
+redHsis = ReconstructDimred(scores, imgSizes, masks);
 
-    figure(1);
-    clf;
-    plot(explained(1:10));
-    title('Explained Variance');
-    xlabel('Order');
-    ylabel('Explained Variance');
-    SetSetting('plotName', fullfile(saveto, 'explained'));
-    SavePlot(1);
-
-    figure(2);
-    clf;
-    plot(latent(1:10));
-    title('Eigenvalues');
-    xlabel('Order');
-    ylabel('Eigenvalue');
-    SetSetting('plotName', fullfile(saveto, 'eigenvalues'));
-    SavePlot(2);
-
-    SetSetting('plotName', fullfile(saveto, 'eigenvectors3'));
-    Plots(3, @PlotEigenvectors, coeff, w, 3);
-    SetSetting('plotName', fullfile(saveto, 'eigenvectors10'));
-    Plots(4, @PlotEigenvectors, coeff, w, 10);
-
-    subimageName = 'Principal Component';
+%% Plot images for components
+if stcmp(method, 'pca')
+    dimredResult = {coeff, scores, latent, explained};
+elseif strcmp(method, 'rica')
+    dimredResult = {coeff, scores, objective};
+else
+    error('Unsupported dimred method');
 end
+PlotDimred(method, dimredResult, w, redHsis);
 
-%% RICA
-if strcmp(method, 'rica')
-    rng default % For reproducibility
-    q = 40;
-    Mdl = rica(X, q, 'IterationLimit', 100, 'Lambda', 1);
-    coeff = Mdl.TransformWeights;
-    scores = X * coeff;
-
-    fig = figure(1);
-    clf(fig);
-    plot(Mdl.FitInfo.Iteration, Mdl.FitInfo.Objective);
-    xlabel('iterations');
-    ylabel('Objection function value');
-    title('Minimization progress')
-    SetSetting('plotName', fullfile(saveto, 'minimize'));
-    SavePlot(1);
-
-    SetSetting('plotName', fullfile(saveto, 'transform_vectors3'));
-    Plots(3, @PlotEigenvectors, coeff, w, 3);
-    SetSetting('plotName', fullfile(saveto, 'transform_vectors310'));
-    Plots(4, @PlotEigenvectors, coeff, w, 10);
-
-    subimageName = 'Feature';
-end
+%% Prepare 3-top components
+WriteTopComponents(redHsis, method);
 
 %% Reconstruct reduced data to original dimension
 hasMask = size(X, 1) ~= (size(norm1, 1) * size(norm1, 2) + size(norm2, 1) * size(norm2, 2));
