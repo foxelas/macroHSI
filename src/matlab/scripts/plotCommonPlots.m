@@ -1,4 +1,7 @@
+%% Plots some basic plots
 close all;
+
+%% Plots XYZ curve
 figure(1);
 hold on
 plot(lambdaIn, xyz(:,1), 'DisplayName','x');
@@ -12,6 +15,7 @@ xlabel('Wavelength (nm)');
 ylabel('Weight (a.u.)');
 SavePlot(1);
 
+%% Plots Solax-iO illumination spectrum 
 figure(2);
 plot(lambdaIn, illumination, 'DisplayName', 'Solax-iO');
 SetSetting('plotName', fullfile(GetSetting('savedir'), '1_Common', 'illumination'));

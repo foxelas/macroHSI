@@ -1,5 +1,7 @@
 function [spectralData] = ReadHSIData(content, target, experiment, blackIsCapOn)
 %%ReadHSIData returns the three images necessary for data analysis 
+%
+%   Usage:
 %   [raw] = ReadHSIData(target, experiment, blackIsCapOn)
  
 if nargin < 4

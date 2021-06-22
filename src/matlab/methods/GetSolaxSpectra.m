@@ -1,5 +1,6 @@
 function [solaxSpec, wavelengths] = GetSolaxSpectra(method, showImage)
 %%GETSOLAXSPECTRA reconstructs values for Solax-IO illumination
+%
 %   Usage:
 %   illum = GetSolaxSpectra();
 %   illum = GetSolaxSpectra('reconstructed');

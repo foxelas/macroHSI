@@ -1,9 +1,10 @@
 function [] = Plots(fig, funcName, varargin)
 %PLOTS wraps plotting functions
 %
+%   Usage:
 %   Plots(fig, funcName, varargin) plots function with funcName and
 %   arguments varargin in figure fig
-%
+%   Plots(1, @PlotSpectra, spectra)
 
 if isnumeric(fig) && ~isempty(fig)
     %disp('Check if no overlaps appear and correct fig is saved.')

@@ -1,6 +1,7 @@
 function [spectralData, imageXYZ, wavelengths] = LoadH5Data(filename)
 %LOADH5DATA loads info from h5 file
 %
+%   Usage:
 %   [spectralData, imageXYZ, wavelengths] = LoadH5Data(filename)
 %   returns spectralData, XYZ image and capture wavelengths
 %

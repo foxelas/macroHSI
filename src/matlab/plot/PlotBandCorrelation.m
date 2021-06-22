@@ -1,4 +1,9 @@
 function [imCorr] = PlotBandCorrelation(inVectors, fig)
+% PlotBandCorrelation plots the correlation among spectral bands 
+%
+%   Usage:
+%   [imCorr] = PlotBandCorrelation(inVectors, fig)
+
     imCorr = corr(inVectors);
     figure(fig);
     imagesc(imCorr);

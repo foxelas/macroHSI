@@ -1,6 +1,7 @@
 function [x] = GetWavelengths(m, option)
 %GETWAVELENGTHS returns the wavelengths
 %
+%   Usage:
 %   x = GetWavelengths(m) returns wavelengths as a vector of wavelengths
 %   x = GetWavelengths(m, 'raw') returns wavelengths as a vecrtor of
 %   wavelengths

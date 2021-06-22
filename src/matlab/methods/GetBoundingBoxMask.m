@@ -1,7 +1,7 @@
 function [bbox] = GetBoundingBoxMask(corners)
 %     GETBOUNDINGBOX returns the settings for a bounding box from the mask indexes
 %
-%     Usage
+%     Usage:
 %     bbox = GetBoundingBoxMask(corners)
 %
 %     Example

@@ -7,6 +7,10 @@ function [filename, tableId, outRow] = GetFilename(configuration, content, integ
 %     'target' [details about captured object]
 %     'dataDate' [catpureDate]
 %     'id' [number value for id ] 
+%
+%   Usage:
+%   [filename, tableId, outRow] = GetFilename(configuration, content, 
+%       integrationTime, target, dataDate, id, specialTarget)
 
 if nargin < 6 
     id = [];

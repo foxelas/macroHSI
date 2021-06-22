@@ -1,6 +1,7 @@
 function [values, valueNames, additionalValues] = GetExpectedValues(name, option)
 %GETEXPECTEDVALUES fetches expected values
 % 
+%   Usage:
 %   [values, valueNames, additionalValues] = GetExpectedValues() returns 
 %   the expected values for colorchart spectra
 %

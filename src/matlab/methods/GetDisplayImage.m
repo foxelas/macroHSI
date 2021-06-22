@@ -1,4 +1,9 @@
 function dispImage = GetDisplayImage(spectralImage, method, channel)
+%GetDisplayImage returns the display image from an HSI image 
+%
+%   Usage:
+%   dispImage = GetDisplayImage(spectralImage, 'rgb')
+%   dispImage = GetDisplayImage(spectralImage, 'channel', 200)
 
 if nargin < 2
     method = 'rgb';

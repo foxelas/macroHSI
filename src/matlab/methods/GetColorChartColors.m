@@ -11,7 +11,7 @@ function [c] = GetColorChartColors(colorNames)
 %     Dependencies
 %     None
 %
-%     Usage
+%     Usage:
 %     c = GetColorChartColors();
 %     The function returns color triplets that can be used e.g for
 %     color spectra for the different color patches.

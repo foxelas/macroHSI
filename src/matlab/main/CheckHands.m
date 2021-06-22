@@ -1,3 +1,5 @@
+%% Prepares a database for hand HSI
+
 %% Setup 
 StartLogger;
 experiment = 'handsOnly';

@@ -1,6 +1,7 @@
 function spectralData = NormalizeHSI(targetName, option)
 %NormalizeHSI returns spectral data from HSI image
 %
+%   Usage:
 %   spectralData = NormalizeHSI('sample2',) returns a
 %   cropped HSI with 'byPixel' normalization
 %

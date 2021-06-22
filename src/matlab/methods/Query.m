@@ -7,6 +7,9 @@ function [filenames, tableIds, outRows] = Query(configuration, content, integrat
 %     'target' [details about captured object]
 %     'dataDate' [catpureDate]
 %     'id' [number value for id ]
+%
+%   Usage:
+%   [filenames, tableIds, outRows] = Query(configuration, content, integrationTime, target, dataDate, id)
 
 warning('off', 'MATLAB:table:ModifiedAndSavedVarnames');
 dataTable = GetDB();

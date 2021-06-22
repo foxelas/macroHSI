@@ -1,6 +1,9 @@
 function normI = NormalizeImage(I, white, black, method)
 %% Normalize a given array I with max and min arrays, white and black
 %  according to methon 'method'
+%
+%   Usage:
+%   normI = NormalizeImage(I, white, black, method)
 
 if nargin < 4 
     method = 'scaling';

@@ -1,10 +1,10 @@
 function [outSpectrum] = SpectrumPad(inSpectrum, options)
 %SPECTRUMPAD adds or removes padding to spectrum array
 %
+%   Usage:
 %   [outSpectrum] = SpectrumPad(inSpectrum) adds padding to inSpectrum
 %   [outSpectrum] = SpectrumPad(inSpectrum, 'add') adds padding to inSpectrum
 %   [outSpectrum] = SpectrumPad(inSpectrum, 'del') removes padding from inSpectrum
-%
 
 if nargin < 2
     options = 'add';

@@ -1,5 +1,7 @@
 function spectrumCurves = GetSpectraFromMask(target, subMasks, targetMask)
 %%GetSpectraFromMask returns the average spectrum of a specific ROI mask 
+%
+%   Usage:
 %   spectrumCurves = GetSpectraFromMask(target, subMasks, targetMask)
 
 hasMasks =  nargin > 1;

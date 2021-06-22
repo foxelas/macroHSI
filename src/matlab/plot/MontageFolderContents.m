@@ -1,4 +1,9 @@
 function [] = MontageFolderContents(path, criteria, figTitle, fig)
+% MontageFolderContents returns the images in a path as a montage
+%
+%   Usage:
+%   MontageFolderContents(path, criteria, figTitle, fig)
+
     if ~isempty(path)
         pathCriteria = fullfile(path, criteria);
     else

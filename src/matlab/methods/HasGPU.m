@@ -1,5 +1,8 @@
 function [hasGpu] = HasGPU()
-%%HASGPU informs whether there is gpu available 
+%HASGPU informs whether there is gpu available 
+%
+%   Usage:
+%   hasGpu = HasGPU()
 
     v = dbstack;
     if numel(v) > 1

@@ -1,6 +1,9 @@
 function [] = PlotSubimageMontage(hsi, figTitle, limit, fig)
-%% PlotSubimageMontage plots all or selected members of an hsi
-%  as a montage figure 
+% PlotSubimageMontage plots all or selected members of an hsi
+% as a montage figure 
+%
+%   Usage:
+%   PlotSubimageMontage(hsi, figTitle, limit, fig);
     
     if nargin < 3
         limit = size(hsi,3);

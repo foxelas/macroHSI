@@ -1,4 +1,9 @@
 function gfc = GoodnessOfFit(reconstructed, measured)
+% GoodnessOfFit returns the Goodness Of Fit criterion
+%
+%   Usage:
+%   gfc = GoodnessOfFit(reconstructed, measured)
+
 if size(reconstructed) ~= size(measured)
     reconstructed = reconstructed';
 end

@@ -1,5 +1,7 @@
 function [] = SavePlot(fig)
 %SAVEPLOT saves the plot shown in figure fig
+%
+%   Usage:
 %   SavePlot(2);
 
 saveImages = GetSetting('saveImages');

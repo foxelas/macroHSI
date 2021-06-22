@@ -1,4 +1,3 @@
-
 %% Initialization
 disp('Initialization started');
 

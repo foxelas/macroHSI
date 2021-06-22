@@ -1,5 +1,8 @@
 function [] = PlotEigenvectors(coeff, xValues, lineNum, fig)
-%% PlotEigenvectors plots eigenvectors of a deconmposition 
+% PlotEigenvectors plots eigenvectors of a deconmposition 
+%
+%   Usage:
+%   PlotEigenvectors(coeff, xValues, lineNum, fig)
     if nargin < 3
         lineNum = 3;
     end 
