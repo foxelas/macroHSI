@@ -21,7 +21,7 @@ if ~exist(strcat(saveName, '_target.mat'), 'file') || ~exist(strcat(saveName, '_
     imshow(GetDisplayImage(spectralData, 'rgb'));
     SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'), strcat(target, '_', num2str(GetSetting('integrationTime')))));
     SavePlot(1);
-    %save(strcat(saveName, '_target.mat'), 'spectralData', '-v7.3');
+    save(strcat(saveName, '_target.mat'), 'spectralData', '-v7.3');
 
     if ~strcmp(GetSetting('normalization'), 'raw')
 
@@ -47,7 +47,7 @@ if ~exist(strcat(saveName, '_target.mat'), 'file') || ~exist(strcat(saveName, '_
         Plots(5, @PlotSpectra, bandmaxSpectrum, wavelengths, 'Bandmax spectrum', 'Bandmax Spectrum for the current Image');
 
         fullReflectanceByPixel = white;
-        %save(strcat(saveName, '_white.mat'), 'fullReflectanceByPixel', 'uniSpectrum', 'bandmaxSpectrum', '-v7.3');
+        save(strcat(saveName, '_white.mat'), 'fullReflectanceByPixel', 'uniSpectrum', 'bandmaxSpectrum', '-v7.3');
 
         %% Black Image
         if blackIsCapOn

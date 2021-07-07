@@ -7,6 +7,11 @@ function [lineColorMap] = GetLineColorMap(style, names)
 if (nargin < 1)
     style = 'class';
 end
+if isempty(names{1})
+    for i = 1:length(names)
+        names{i} = num2str(i);
+    end 
+end 
 
 switch style
     case 'class'
@@ -21,6 +26,9 @@ switch style
     case 'custom'
         key = names;
         value = jet(length(names));
+    case 'custom-hsv'
+        key = names; 
+        value = hsv(length(names) + 1);
     otherwise
         key = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'};
         value = jet(10);

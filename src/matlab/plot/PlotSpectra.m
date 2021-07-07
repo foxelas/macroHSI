@@ -1,43 +1,63 @@
-function[] = PlotSpectra(spectra, wavelengths, names, figTitle, fig)
-%%PLOTSPECTRA plots one or more spectra together
+function [] = PlotSpectra(curves, names, wavelengths, yLabel, figTitle, colors, fig)
+%PlotSpectra plots a collection of spectrum curves 
 %
-%   Usage:
-%   PlotSpectra(spectra, wavelengths, names, figTitle, fig);
-%   PlotSpectra(spectra)
+%   Usage: 
+%   PlotSpectra(curves, names, wavelengths, yLabel, figTitle, fig)
 
-[~, n] = size(spectra);
-if isempty(wavelengths)
-    wavelengths = GetWavelengths(n);
+[curveN, xN] = size(curves);
+
+if nargin < 2 
+    names = cell(curveN,1);
+    for i = 1:curveN
+        names{i} = 's' + num2str(i);
+    end 
+end 
+
+if nargin < 3 
+    wavelengths = getWavelengths(xN);
+end 
+
+if nargin < 4 
+    yLabel = 'Measured reflectance (a.u.)';
+end 
+
+if nargin < 5 
+    figTitle = '';
 end
 
-if isempty(names)
-    names = [];
+if nargin < 6
+    lineColorMap = GetLineColorMap('custom', names); %'custom-hsv'
+    key = keys(lineColorMap);
+    colors = cell(curveN, 1);
+    for i = 1:curveN
+        colors{i} = lineColorMap(key{i});
+    end
 end
 
-if ~iscell(names)
-    names = {names};
+
+    
+x = wavelengths; 
+h = zeros(curveN,1);
+for i = 1:curveN
+    spectrum = curves(i,:);
+    hold on
+    h(i) = plot(x, spectrum, 'DisplayName', names{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+    hold off;
 end
 
-if isempty(figTitle)
-    figTitle = 'Calculated Spectra';
-end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% if hasReflectanceRatio 
+%     yline(1,'--','100%','LineWidth',3, 'DisplayName', 'Max Value');
+% end
 
-lineColorMap = GetLineColorMap('custom', names);
-key = keys(lineColorMap);
-
-hold on
-for i = 1:length(names)
-    h(i) = plot(wavelengths, spectra(i, :), 'DisplayName', key{i}, 'Color', lineColorMap(key{i}), 'LineWidth', 3);
-end
-hold off
-
-legend(h, 'Location', 'northwest', 'FontSize', 15)
 xlabel('Wavelength (nm)', 'FontSize', 15);
-ylabel('Reflectance (a.u.)', 'FontSize', 15);
-title(figTitle)
+ylabel(yLabel, 'FontSize', 15);
+title(figTitle, 'FontSize', 15);
+legend(h, 'Location', 'SouthEast');
+xlim([min(wavelengths), max(wavelengths)]);
 
-%%For hsi case only
-ylim([0, 5 * 10^(-3)]);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     set(gcf, 'units','normalized','outerposition',[0 0 1 1]);
 
 %%To disable showing exponent power on the corner
 ax = gca;
@@ -45,4 +65,4 @@ ax.YAxis.Exponent = 0;
 
 SavePlot(fig);
 
-end
+end 

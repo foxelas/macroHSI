@@ -24,7 +24,7 @@ valueNames = [];
 additionalValues = [];
 switch name
     case 'colorchartSpectra'
-        filename = fullfile(getSetting('systemdir'), 'ColorChecker_RGB_and_spectra.txt');
+        filename = fullfile(GetSetting('systemdir'), 'ColorChecker_RGB_and_spectra.txt');
         outstruct = delimread(filename, '\t', {'text', 'num'});
         valueNames = outstruct.text;
         valueNames = valueNames(2:length(valueNames));
@@ -32,21 +32,21 @@ switch name
         values = outstruct.num(2:end, :);
 
     case 'colorchartRGB'
-        filename = fullfile(getSetting('systemdir'), 'ColorCheckerMicro_Matte_RGB_values.txt');
+        filename = fullfile(GetSetting('systemdir'), 'ColorCheckerMicro_Matte_RGB_values.txt');
         outstruct = delimread(filename, '\t', 'num');
         values = outstruct.num;
 
     case 'colorchartLab'
-        filename = fullfile(getSetting('systemdir'), 'ColorCheckerMicro_Matte_Lab_values.txt');
+        filename = fullfile(GetSetting('systemdir'), 'ColorCheckerMicro_Matte_Lab_values.txt');
         outstruct = delimread(filename, '\t', 'num');
         values = outstruct.num;
 
     case 'colorchartOrder'
-        colorPatchOrder = getSetting('colorPatchOrder');
+        colorPatchOrder = GetSetting('colorPatchOrder');
         if isempty(colorPatchOrder)
             colorPatchOrder = 'darkSkinBottom';
         end
-        outstruct = delimread(fullfile(getSetting('datasetSettingsDir'), strcat(colorPatchOrder, 'PatchOrder.txt')), '\t', 'text');
+        outstruct = delimread(fullfile(GetSetting('datasetSettingsDir'), strcat(colorPatchOrder, 'PatchOrder.txt')), '\t', 'text');
         values = outstruct.text;
 
     otherwise

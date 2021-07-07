@@ -52,6 +52,7 @@ switch option
         error('Unsupported setting for normalization.');
 end
 
+%%%%Checks for size discrepancies
 if useBlack
     if ~isequal(size(spectralData), size(blackReflectance))
         cropMask = getCaptureROImask(m, n);
@@ -63,12 +64,26 @@ if useBlack
         whiteReflectance = whiteReflectance(any(cropMask, 2), any(cropMask, 1), :);
         warning('Crop the image value: white');
     end
-    NormalizeImage(spectralData, whiteReflectance, blackReflectance);
+    
+    %% Cleanup wrong spectral values before normalization 
+    spectralData = max(spectralData, 0);
+
+%     spectralDataRow = reshape(spectralData, [m*n, w]);
+%     maxSpectrum = max(reshape(whiteReflectance, [m*n, w]), [], 1);
+%     maxSpectrum = min(maxSpectrum, 2* 0.001);
+%     spectralDataRow = min(spectralDataRow, maxSpectrum);
+%     spectralData = reshape(spectralDataRow, [m, n, w]);
+
+    %% Normalization
+    spectralData = NormalizeImage(spectralData, whiteReflectance, blackReflectance);
+    spectralData = min(spectralData, 2);
+    
+    %% Further check 
+    spectralData = max(spectralData, 0);
+    
+
 end
 
-spectralData = max(spectralData, 0);
-spectralData(isnan(spectralData)) = 0;
-spectralData(isinf(spectralData)) = 0;
 
 % figure(4);imshow(squeeze(spectralData(:,:,100)));
 

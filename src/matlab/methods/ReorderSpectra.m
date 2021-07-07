@@ -16,12 +16,12 @@ end
 
 [~, idx] = ismember(spectraColorOrder, chartColorOrder);
 idx = nonzeros(idx);
-[~, idx2] = ismember(spectralWavelengths', wavelengths);
 
-idx2 = nonzeros(idx2);
+% [~, idx2] = ismember(spectralWavelengths', wavelengths)
+% idx2 = nonzeros(idx2);
+% targetDecim = target(:, idx2);
 
-targetDecim = target(:, idx2);
-reorderedSpectra = targetDecim(idx, :);
+reorderedSpectra = target(idx, :);
 
 labels = spectraColorOrder;
 end

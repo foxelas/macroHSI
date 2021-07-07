@@ -2,60 +2,1952 @@ Initialization started
 Data directory is set to ..\..\..\..\..\..\..\mspi\saitamav2.
 Save directory is set to ..\..\..\output\hsi.
 Settings loaded from ..\..\conf\hsiUserSettings.csv and saved in parameters\configuration.mat.
---Setting [dataDate] to 20201218.
+--Setting [dataDate] to 20210628.
+[Warning: Setting default database for calibration: calib.] 
 --Setting [database] to calib.
---Setting [datadir] to D:\elena\mspi\2_saitamaHSI\saitama20201218_test\h5.
+--Setting [datadir] to D:\elena\mspi\2_saitamaHSI\saitama20210628_test\h5.
 --Setting [matdir] to D:\elena\mspi\matfiles\hsi.
---Setting [experiment] to handsOnly.
---Setting [saveFolder] to handsOnly.
---Setting [integrationTime] to 200.00.
+--Setting [experiment] to test2021628.
+--Setting [saveFolder] to test2021628.
 --Setting [configuration] to singleLightClose.
 --Setting [normByPixel] to ON.
 --Setting [normalization] to byPixel.
 Initialization finished
---Setting [cropBorders] to ON.
---Setting [integrationTime] to 200.00.
---Setting [dataDate] to 20201209.
---Setting [configuration] to singleLightFar.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\rgb\20201209_180316-interiorhand.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\normalized\20201209_180316-interiorhand.
---Setting [integrationTime] to 200.00.
---Setting [dataDate] to 20201218.
+--Setting [integrationTime] to 618.00.
+--Setting [dataDate] to 20210628.
 --Setting [configuration] to singleLightClose.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\rgb\20201218_114542.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\normalized\20201218_114542.
---Setting [integrationTime] to 800.00.
---Setting [dataDate] to 20210127.
+--Setting [integrationTime] to 618.00.
+--Setting [dataDate] to 20210628.
 --Setting [configuration] to singleLightClose.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\rgb\20210127_174840_dry_nofilter_800.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\normalized\20210127_174840_dry_nofilter_800.
---Setting [integrationTime] to 300.00.
---Setting [dataDate] to 20210127.
---Setting [configuration] to singleLightClose.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\rgb\20210127_174840_dry_nofilter_300.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\normalized\20210127_174840_dry_nofilter_300.
---Setting [integrationTime] to 1460.00.
---Setting [dataDate] to 20210127.
---Setting [configuration] to singleLightClose.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\rgb\20210127_174840_dry_nofilter_1460.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\normalized\20210127_174840_dry_nofilter_1460.
---Setting [integrationTime] to 1460.00.
---Setting [dataDate] to 20210127.
---Setting [configuration] to singleLightClose.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\rgb\20210127_174840_dry_filter_1460.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\normalized\20210127_174840_dry_filter_1460.
---Setting [integrationTime] to 300.00.
---Setting [dataDate] to 20210127.
---Setting [configuration] to singleLightClose.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\rgb\20210127_174840_wet_nofilter_300.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\normalized\20210127_174840_wet_nofilter_300.
---Setting [integrationTime] to 1460.00.
---Setting [dataDate] to 20210127.
---Setting [configuration] to singleLightClose.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\rgb\20210127_174840_wet_filter_1460.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\normalized\20210127_174840_wet_filter_1460.
---Setting [integrationTime] to 200.00.
---Setting [dataDate] to 20201218.
---Setting [configuration] to doubleLightClose.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\rgb\20201218_154605.
---Setting [plotName] to ..\..\..\output\hsi\handsOnly\normalized\20201218_154605.
+Unrecognized function or variable 'imgList'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Temp', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\scripts\Temp.m', 3)" style="font-weight:bold">Temp</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\scripts\Temp.m',3,0)">line 3</a>)
+ EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized)
+
+clear all 
+close all 
+SetSetting('integrationTime', 618);
+--Setting [integrationTime] to 618.00.
+SetSetting('dataDate', dataDate);
+{Unrecognized function or variable 'dataDate'.
+} 
+experiment = 'test2021628';
+dataDate = '20210628';
+SetSetting('integrationTime', 618);
+--Setting [integrationTime] to 618.00.
+SetSetting('dataDate', dataDate);
+--Setting [dataDate] to 20210628.
+targetName = 'colorChart';
+allowRoiSelection = true;
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,...
+    allowRoiSelection);
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetFilename', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetFilename.m', 35)" style="font-weight:bold">GetFilename</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetFilename.m',35,0)">line 35</a>)
+Index exceeds the number of array elements (0).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 45)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',45,0)">line 45</a>)
+[filename, tableId] = GetFilename(fileConditions{:});
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetFilename.m',35,1)">35  </a>filename = outRow.Filename{1};
+if system_dependent('IsDebugMode')==1, dbquit; end
+targetName = 'colorchart';
+allowRoiSelection = true;
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,...
+    allowRoiSelection);
+
+ans =
+
+   -0.0021
+
+{Cannot find an exact (case-sensitive) match for 'GetColorchartMasks'
+
+The closest match is: getColorchartMasks in D:\elena\Google
+Drive\titech\research\experiments\macroMSI-processing\src\matlab\hyperspectral\getColorchartMasks.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 50)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',50,0)">line 50</a>)
+[colorMasks, chartMask] = GetColorchartMasks(dispImage, allowRoiSelection, filename);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',50,1)">50  </a>[colorMasks, chartMask] = GetColorchartMasks(dispImage, allowRoiSelection, filename);
+uiopen('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorchartMasks.m',1)
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,...
+allowRoiSelection);
+{Cannot find an exact (case-sensitive) match for 'getSetting'
+
+The closest match is: GetSetting in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetSetting.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetExpectedValues', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m', 45)" style="font-weight:bold">GetExpectedValues</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m',45,0)">line 45</a>)
+        colorPatchOrder = getSetting('colorPatchOrder');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 24)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',24,0)">line 24</a>)
+patchOrder = GetExpectedValues('colorchartOrder', experiment);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m',45,1)">45  </a>        colorPatchOrder = getSetting('colorPatchOrder');
+if system_dependent('IsDebugMode')==1, dbquit; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+{Cannot find an exact (case-sensitive) match for 'getSetting'
+
+The closest match is: GetSetting in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetSetting.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetExpectedValues', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m', 49)" style="font-weight:bold">GetExpectedValues</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m',49,0)">line 49</a>)
+        outstruct = delimread(fullfile(getSetting('datasetSettingsDir'),
+        strcat(colorPatchOrder, 'PatchOrder.txt')), '\t', 'text');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 24)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',24,0)">line 24</a>)
+patchOrder = GetExpectedValues('colorchartOrder', experiment);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m',49,1)">49  </a>        outstruct = delimread(fullfile(getSetting('datasetSettingsDir'), strcat(colorPatchOrder, 'PatchOrder.txt')), '\t', 'text');
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+{Cannot find an exact (case-sensitive) match for 'getSetting'
+
+The closest match is: GetSetting in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetSetting.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 42)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',42,0)">line 42</a>)
+option = getSetting('normalization');
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',42,1)">42  </a>option = getSetting('normalization');
+if system_dependent('IsDebugMode')==1, dbquit all; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+ans =
+
+   -0.0021
+
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorchartMasks.m',64,1)">64  </a>saveFilename = DirMake(GetSetting('matdir'), 'cororchartMasks', ...
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Cannot find an exact (case-sensitive) match for 'getSetting'
+
+The closest match is: GetSetting in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetSetting.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetColorchartMasks', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorchartMasks.m', 73)" style="font-weight:bold">GetColorchartMasks</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorchartMasks.m',73,0)">line 73</a>)
+    setSetting('plotName', DirMake(getSetting('savedir'), getSetting('saveFolder'),
+    filename));
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 50)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',50,0)">line 50</a>)
+[colorMasks, chartMask] = GetColorchartMasks(dispImage, allowRoiSelection, filename);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorchartMasks.m',73,1)">73  </a>    setSetting('plotName', DirMake(getSetting('savedir'), getSetting('saveFolder'), filename));
+if system_dependent('IsDebugMode')==1, dbquit; end
+save('last_run.mat')
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+ans =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+{Cannot find an exact (case-sensitive) match for 'savePlot'
+
+The closest match is: SavePlot in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\plot\SavePlot.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetColorchartMasks', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorchartMasks.m', 74)" style="font-weight:bold">GetColorchartMasks</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorchartMasks.m',74,0)">line 74</a>)
+    savePlot(fig1);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 50)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',50,0)">line 50</a>)
+[colorMasks, chartMask] = GetColorchartMasks(dispImage, allowRoiSelection, filename);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorchartMasks.m',74,1)">74  </a>    savePlot(fig1);
+if system_dependent('IsDebugMode')==1, dbquit all; end
+GetSetting('savedir'), GetSetting('saveFolder')
+
+ans =
+
+    '..\..\..\output\hsi'
+
+
+ans =
+
+    'test2021628'
+
+GetSetting('savedir'), GetSetting('saveFolder')
+
+ans =
+
+    '..\..\..\output\hsi'
+
+
+ans =
+
+    'test2021628'
+
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',45,1)">45  </a>[filename, tableId] = GetFilename(fileConditions{:});
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+ans =
+
+   -0.0021
+
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',47,1)">47  </a>dispImage = GetDisplayImage(spectralData, 'rgb');
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',45,1)">45  </a>[filename, tableId] = GetFilename(fileConditions{:});
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Saved file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+{Unrecognized function or variable 'GetSpectrumCurves'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 51)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',51,0)">line 51</a>)
+actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',51,1)">51  </a>actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);
+load('D:\elena\mspi\matfiles\hsi\calibTriplets\136_white.mat')
+figure;
+imshow(GetDisplayImage, spectralData)
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetDisplayImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m', 16)" style="font-weight:bold">GetDisplayImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m',16,0)">line 16</a>)
+[m, n, z] = size(spectralImage);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m',16,1)">16  </a>[m, n, z] = size(spectralImage);
+if system_dependent('IsDebugMode')==1, dbquit; end
+imshow(GetDisplayImage(spectralData))
+clear all 
+close all 
+load('last_run.mat')
+load('D:\elena\mspi\matfiles\hsi\calibTriplets\136_white.mat')
+imshow(GetDisplayImage(fullReflectanceByPixel))
+i1 = fullReflectanceByPixel;
+imagesc(GetDisplayImage(fullReflectanceByPixel))
+imagesc(im2gray(GetDisplayImage(fullReflectanceByPixel)))
+imagesc(im2gray(GetDisplayImage(fullReflectanceByPixel, 200)))
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetDisplayImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m', 54)" style="font-weight:bold">GetDisplayImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m',54,0)">line 54</a>)
+Unsupported method for display image reconstruction
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m',54,1)">54  </a>        error('Unsupported method for display image reconstruction');
+if system_dependent('IsDebugMode')==1, dbquit; end
+imagesc(GetDisplayImage(fullReflectanceByPixel, 200))
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetDisplayImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m', 54)" style="font-weight:bold">GetDisplayImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m',54,0)">line 54</a>)
+Unsupported method for display image reconstruction
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m',54,1)">54  </a>        error('Unsupported method for display image reconstruction');
+help GetBandCorrelation
+      <strong>GetBandCorrelation</strong> returns the array of band correlation for an msi I
+ 
+      Usage:
+      [c] = <strong>GetBandCorrelation</strong>(I)
+      [c] = <strong>GetBandCorrelation</strong>(I, hasPixelSelection)
+
+help GetDisplayImage
+ <strong>GetDisplayImage</strong> returns the display image from an HSI image
+ 
+    Usage:
+    dispImage = <strong>GetDisplayImage</strong>(spectralImage, 'rgb')
+    dispImage = <strong>GetDisplayImage</strong>(spectralImage, 'channel', 200)
+
+imagesc(GetDisplayImage(fullReflectanceByPixel, 'channel', 200))
+{Unrecognized function or variable 'fullReflectanceByPixel'.
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m',54,1)">54  </a>        error('Unsupported method for display image reconstruction');
+if system_dependent('IsDebugMode')==1, dbquit; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+imagesc(GetDisplayImage(fullReflectanceByPixel, 'channel', 200))
+{Unrecognized function or variable 'fullReflectanceByPixel'.
+} 
+load('D:\elena\mspi\matfiles\hsi\calibTriplets\136_white.mat')
+i1 = fullReflectanceByPixel;
+imagesc(GetDisplayImage(fullReflectanceByPixel, 'channel', 200))
+colorbar
+imagesc(GetDisplayImage(fullReflectanceByPixel, 'channel', 400))
+imagesc(GetDisplayImage(fullReflectanceByPixel, 'channel', 300))
+i2 = ApplySmoothingFilterOnHSI(i1);
+i2 = ApplySmoothingFilterOnHSI(i1);
+i2 = ApplySmoothingFilterOnHSI(i1);
+imagesc(GetDisplayImage(i1, 'channel', 400))
+figure;
+imagesc(GetDisplayImage(i2, 'channel', 400))
+figure;
+imagesc(GetDisplayImage(i1, 'channel', 400))
+colorbar
+colorbar
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeImage.m',39,1)">39  </a>end
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeImage.m',39,1)">39  </a>end
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeImage.m',39,1)">39  </a>end
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeImage.m',39,1)">39  </a>end
+
+figure; plot(380:780, mean(reshape(white, [size(white, 1) * size(white, 2), size(white, 3)])), 'DisplayName', 'Average White');
+
+figure; plot(380:780, min(reshape(white, [size(white, 1) * size(white, 2), size(white, 3)])), 'DisplayName', 'Min White');
+
+figure; plot(380:780, min(reshape(white, [size(white, 1) * size(white, 2), size(white, 3)])), 'DisplayName', 'Min White');
+figure; plot(380:780, max(reshape(white, [size(white, 1) * size(white, 2), size(white, 3)])), 'DisplayName', 'Min White');
+close all 
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeImage.m',39,1)">39  </a>end
+if system_dependent('IsDebugMode')==1, dbcont; end
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+{Unrecognized function or variable 'GetSpectrumCurves'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 51)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',51,0)">line 51</a>)
+actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',51,1)">51  </a>actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);
+GetSetting('isRotated')
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   1
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+{Unrecognized function or variable 'GetSpectrumCurves'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 51)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',51,0)">line 51</a>)
+actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',51,1)">51  </a>actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);
+if system_dependent('IsDebugMode')==1, dbquit; end
+GetSetting('isRotated')
+
+ans =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   1
+
+SetSetting('isRotated', false)
+--Setting [isRotated] to OFF.
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',51,1)">51  </a>actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);
+size(chartMask)
+
+ans =
+
+   488   454
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',51,1)">51  </a>actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);
+if system_dependent('IsDebugMode')==1, dbquit; end
+SetSetting('experiment', 'testCalibration')
+--Setting [experiment] to testCalibration.
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorchartMasks.m',22,1)">22  </a>if strcmp(configuration, 'singleLightFar')
+if system_dependent('IsDebugMode')==1, dbcont; end
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',51,1)">51  </a>actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Unrecognized function or variable 'GetSpectrumCurves'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 51)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',51,0)">line 51</a>)
+actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);
+} 
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('delimread', 'D:\elena\matlab\toolbox\delimread\delimread.m', 157)" style="font-weight:bold">delimread</a> (<a href="matlab: opentoline('D:\elena\matlab\toolbox\delimread\delimread.m',157,0)">line 157</a>)
+File could not be opened: ..\..\..\input\4_hsi\darkSkinBottomPatchOrder.txt
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetExpectedValues', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m', 49)" style="font-weight:bold">GetExpectedValues</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m',49,0)">line 49</a>)
+        outstruct = delimread(fullfile(GetSetting('datasetSettingsDir'),
+        strcat(colorPatchOrder, 'PatchOrder.txt')), '\t', 'text');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 24)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',24,0)">line 24</a>)
+patchOrder = GetExpectedValues('colorchartOrder', experiment);
+} 
+<a href="matlab: opentoline('D:\elena\matlab\toolbox\delimread\delimread.m',157,1)">157 </a>    error(['File could not be opened: ',fpath]);
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+{Unrecognized function or variable 'CompareSpectra'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra,
+    lineNames);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,1)">58  </a>    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra, lineNames);
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('delimread', 'D:\elena\matlab\toolbox\delimread\delimread.m', 157)" style="font-weight:bold">delimread</a> (<a href="matlab: opentoline('D:\elena\matlab\toolbox\delimread\delimread.m',157,0)">line 157</a>)
+File could not be opened: ..\..\..\input\4_hsi\darkSkinBottomPatchOrder.txt
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetExpectedValues', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m', 49)" style="font-weight:bold">GetExpectedValues</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m',49,0)">line 49</a>)
+        outstruct = delimread(fullfile(GetSetting('datasetSettingsDir'),
+        strcat(colorPatchOrder, 'PatchOrder.txt')), '\t', 'text');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 24)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',24,0)">line 24</a>)
+patchOrder = GetExpectedValues('colorchartOrder', experiment);
+} 
+<a href="matlab: opentoline('D:\elena\matlab\toolbox\delimread\delimread.m',157,1)">157 </a>    error(['File could not be opened: ',fpath]);
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+{Cannot find an exact (case-sensitive) match for 'plots'
+
+The closest match is: Plots in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 13)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',13,0)">line 13</a>)
+plots(4, @PlotColorChartSpectra, expected, lineNames, 'expected');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra,
+    lineNames);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',13,1)">13  </a>plots(4, @PlotColorChartSpectra, expected, lineNames, 'expected');
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+{'pads' is not found in the current folder or on the MATLAB path, but exists in:
+    D:\elena\Google Drive\titech\research\experiments\macroMSI-processing\src\matlab\methods
+
+<a href = "matlab:matlab.internal.language.commandline.executeCode('cd ''D:\elena\Google Drive\titech\research\experiments\macroMSI-processing\src\matlab\methods''')">Change the MATLAB current folder</a> or <a href = "matlab:matlab.internal.language.commandline.executeCode('addpath ''D:\elena\Google Drive\titech\research\experiments\macroMSI-processing\src\matlab\methods''')">add its folder to the MATLAB path</a>.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('PlotColorChartSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotColorChartSpectra.m', 133)" style="font-weight:bold">PlotColorChartSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotColorChartSpectra.m',133,0)">line 133</a>)
+            spectrum = pads(vals(i,:), 'del');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Plots', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m', 24)" style="font-weight:bold">Plots</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m',24,0)">line 24</a>)
+funcName(newVarargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 13)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',13,0)">line 13</a>)
+Plots(4, @PlotColorChartSpectra, expected, lineNames, 'expected');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra,
+    lineNames);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotColorChartSpectra.m',133,1)">133 </a>            spectrum = pads(vals(i,:), 'del');
+if system_dependent('IsDebugMode')==1, dbquit all; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotColorChartSpectra.m',133,1)">133 </a>            spectrum = SpectrumPad(vals(i,:), 'del');
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference.png.
+{Cannot find an exact (case-sensitive) match for 'applyRowFunc'
+
+The closest match is: ApplyRowFunc in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\methods\ApplyRowFunc.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 27)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',27,0)">line 27</a>)
+gofs = applyRowFunc(@GoodnessOfFit, measured, expected);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra,
+    lineNames);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',27,1)">27  </a>gofs = applyRowFunc(@GoodnessOfFit, measured, expected);
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',57,1)">57  </a>if ~strcmp(option, 'raw')
+figure; 
+for i = 1:30
+hold on; plot(actualSpectralVals(i,:));
+end 
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeHSI.m',29,1)">29  </a>switch option
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+figure(GetDisplayImage(spectralData))
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('figure')" style="font-weight:bold">figure</a>
+Argument must be a Figure object or a positive integer.
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeHSI.m',66,1)">66  </a>    NormalizeImage(spectralData, whiteReflectance, blackReflectance);
+figure; imshow (GetDisplayImage(spectralData))
+figure; imshow (GetDisplayImage(white))
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetWavelengths', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetWavelengths.m', 36)" style="font-weight:bold">GetWavelengths</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetWavelengths.m',36,0)">line 36</a>)
+Unsupported wavelength range
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetWavelengths', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetWavelengths.m', 40)" style="font-weight:bold">GetWavelengths</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetWavelengths.m',40,0)">line 40</a>)
+        x = GetWavelengths(m, 'raw');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetDisplayImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m', 18)" style="font-weight:bold">GetDisplayImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetDisplayImage.m',18,0)">line 18</a>)
+    v = GetWavelengths(z, 'index');
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetWavelengths.m',36,1)">36  </a>            error('Unsupported wavelength range');
+if system_dependent('IsDebugMode')==1, dbquit; end
+figure; imshow (GetDisplayImage(whiteReflectance))
+figure; imshow (GetDisplayImage(whiteReflectance))
+figure; imshow (GetDisplayImage(blackReflectance))
+if system_dependent('IsDebugMode')==1, dbquit; end
+if system_dependent('IsDebugMode')==1, dbquit all; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',57,1)">57  </a>if ~strcmp(option, 'raw')
+figure; 
+for i = 1:30
+hold on; plot(actualSpectralVals(i,:));
+end 
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeHSI.m',77,1)">77  </a>for i = 1:m*n
+max(spectralDataRow(:))
+
+ans =
+
+   1.7329e+06
+
+sum(isnan(spectralDataRow(:)))
+
+ans =
+
+     0
+
+figure; plot(maxSpectrum)
+maxSpectrum = max(spectralDataRow, [], 1);
+figure; plot(maxSpectrum)
+maxSpectrum = max(reshape(whiteReflectance, [m*n, w]), [], 1);
+figure; plot(maxSpectrum)
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeHSI.m',77,1)">77  </a>for i = 1:m*n
+ind(isnan(spectralDataRow))
+{Unrecognized function or variable 'ind'.
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeHSI.m',77,1)">77  </a>for i = 1:m*n
+find(isnan(spectralDataRow))
+
+ans =
+
+  0×1 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> column vector
+
+find(isinf(spectralDataRow))
+
+ans =
+
+  0×1 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> column vector
+
+v = max(spectralDataRow, maxSpectrum);
+v1 = max(spectralDataRow, [], 1)
+
+v1 =
+
+  Columns 1 through 9
+
+    0.0021    0.0014    0.0010    0.0008    0.0006    0.0004    0.0003    0.0003    0.0002
+
+  Columns 10 through 18
+
+    0.0002    0.0002    0.0002    0.0001    0.0001    0.0001    0.0001    0.0001    0.0001
+
+  Columns 19 through 27
+
+    0.0001    0.0001    0.0001    0.0001    0.0002    0.0002    0.0003    0.0003    0.0004
+
+  Columns 28 through 36
+
+    0.0005    0.0005    0.0006    0.0006    0.0007    0.0007    0.0007    0.0007    0.0007
+
+  Columns 37 through 45
+
+    0.0007    0.0007    0.0007    0.0007    0.0007    0.0007    0.0007    0.0007    0.0007
+
+  Columns 46 through 54
+
+    0.0007    0.0007    0.0007    0.0008    0.0008    0.0008    0.0009    0.0009    0.0010
+
+  Columns 55 through 63
+
+    0.0010    0.0011    0.0011    0.0012    0.0013    0.0013    0.0014    0.0014    0.0015
+
+  Columns 64 through 72
+
+    0.0015    0.0016    0.0016    0.0017    0.0017    0.0017    0.0017    0.0018    0.0018
+
+  Columns 73 through 81
+
+    0.0018    0.0018    0.0018    0.0018    0.0018    0.0018    0.0017    0.0017    0.0017
+
+  Columns 82 through 90
+
+    0.0017    0.0017    0.0017    0.0016    0.0016    0.0016    0.0016    0.0016    0.0016
+
+  Columns 91 through 99
+
+    0.0016    0.0015    0.0015    0.0015    0.0015    0.0015    0.0015    0.0015    0.0015
+
+  Columns 100 through 108
+
+    0.0015    0.0015    0.0015    0.0015    0.0015    0.0015    0.0015    0.0015    0.0015
+
+  Columns 109 through 117
+
+    0.0015    0.0015    0.0015    0.0016    0.0016    0.0016    0.0016    0.0016    0.0017
+
+  Columns 118 through 126
+
+    0.0017    0.0017    0.0017    0.0018    0.0018    0.0018    0.0018    0.0019    0.0019
+
+  Columns 127 through 135
+
+    0.0019    0.0019    0.0020    0.0020    0.0020    0.0020    0.0021    0.0021    0.0021
+
+  Columns 136 through 144
+
+    0.0021    0.0021    0.0021    0.0021    0.0022    0.0022    0.0022    0.0022    0.0022
+
+  Columns 145 through 153
+
+    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022
+
+  Columns 154 through 162
+
+    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022
+
+  Columns 163 through 171
+
+    0.0022    0.0022    0.0021    0.0021    0.0021    0.0021    0.0021    0.0021    0.0021
+
+  Columns 172 through 180
+
+    0.0021    0.0020    0.0020    0.0020    0.0020    0.0020    0.0020    0.0020    0.0020
+
+  Columns 181 through 189
+
+    0.0020    0.0020    0.0020    0.0019    0.0019    0.0019    0.0019    0.0019    0.0019
+
+  Columns 190 through 198
+
+    0.0019    0.0019    0.0019    0.0019    0.0019    0.0019    0.0019    0.0019    0.0019
+
+  Columns 199 through 207
+
+    0.0019    0.0019    0.0019    0.0019    0.0019    0.0019    0.0019    0.0019    0.0019
+
+  Columns 208 through 216
+
+    0.0019    0.0019    0.0019    0.0019    0.0019    0.0019    0.0020    0.0020    0.0020
+
+  Columns 217 through 225
+
+    0.0020    0.0020    0.0020    0.0020    0.0020    0.0020    0.0021    0.0021    0.0021
+
+  Columns 226 through 234
+
+    0.0021    0.0021    0.0021    0.0021    0.0021    0.0021    0.0021    0.0021    0.0021
+
+  Columns 235 through 243
+
+    0.0021    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022
+
+  Columns 244 through 252
+
+    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022
+
+  Columns 253 through 261
+
+    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0022    0.0021    0.0021
+
+  Columns 262 through 270
+
+    0.0021    0.0021    0.0021    0.0021    0.0021    0.0021    0.0021    0.0020    0.0020
+
+  Columns 271 through 279
+
+    0.0020    0.0020    0.0020    0.0020    0.0020    0.0020    0.0020    0.0019    0.0019
+
+  Columns 280 through 288
+
+    0.0019    0.0019    0.0019    0.0019    0.0018    0.0018    0.0018    0.0018    0.0018
+
+  Columns 289 through 297
+
+    0.0018    0.0017    0.0017    0.0017    0.0017    0.0017    0.0016    0.0016    0.0016
+
+  Columns 298 through 306
+
+    0.0016    0.0016    0.0015    0.0015    0.0015    0.0015    0.0015    0.0015    0.0014
+
+  Columns 307 through 315
+
+    0.0014    0.0014    0.0014    0.0014    0.0014    0.0014    0.0014    0.0013    0.0013
+
+  Columns 316 through 324
+
+    0.0013    0.0013    0.0012    0.0012    0.0012    0.0011    0.0011    0.0011    0.0010
+
+  Columns 325 through 333
+
+    0.0010    0.0010    0.0010    0.0010    0.0009    0.0009    0.0009    0.0009    0.0009
+
+  Columns 334 through 342
+
+    0.0008    0.0008    0.0008    0.0008    0.0008    0.0008    0.0007    0.0007    0.0007
+
+  Columns 343 through 351
+
+    0.0007    0.0007    0.0007    0.0006    0.0006    0.0006    0.0006    0.0006    0.0006
+
+  Columns 352 through 360
+
+    0.0006    0.0006    0.0005    0.0005    0.0005    0.0005    0.0005    0.0005    0.0005
+
+  Columns 361 through 369
+
+    0.0005    0.0004    0.0004    0.0004    0.0004    0.0004    0.0004    0.0004    0.0004
+
+  Columns 370 through 378
+
+    0.0004    0.0004    0.0004    0.0004    0.0004    0.0003    0.0003    0.0003    0.0003
+
+  Columns 379 through 387
+
+    0.0003    0.0003    0.0003    0.0003    0.0003    0.0003    0.0003    0.0004    0.0004
+
+  Columns 388 through 396
+
+    0.0004    0.0004    0.0004    0.0004    0.0004    0.0004    0.0004    0.0004    0.0004
+
+  Columns 397 through 401
+
+    0.0004    0.0004    0.0004    0.0004    0.0004
+
+v1 = max(spectralDataRow, [], 1);
+v2 = max(v, [], 1);
+figure; hold on 
+plot(v1, 'DisplayName', 'original max');
+plot(v2, 'DisplayName', 'after max');
+plot(maxSpectrum, 'DisplayName', 'white max');
+legend
+v = min(spectralDataRow, maxSpectrum);
+close all 
+v1 = max(spectralDataRow, [], 1);
+v2 = max(v, [], 1);
+figure; hold on 
+plot(v1, 'DisplayName', 'original max');
+plot(v2, 'DisplayName', 'after max');
+plot(maxSpectrum, 'DisplayName', 'white max');
+legend
+spectralDataRow = reshape(spectralData, [m*n, w]);
+maxSpectrum = max(reshape(whiteReflectance, [m*n, w]), [], 1);
+maxSpectrum = max(maxSpectrum, 2* 0.001);
+spectralDataRow = min(spectralDataRow, maxSpectrum);
+figure; hold on 
+
+plot( max(spectralDataRow, [], 1), 'DisplayName', 'after max');
+plot(maxSpectrum, 'DisplayName', 'white max');
+legend
+spectralDataRow = reshape(spectralData, [m*n, w]);
+maxSpectrum = max(reshape(whiteReflectance, [m*n, w]), [], 1);
+maxSpectrum = min(maxSpectrum, 2* 0.001);
+spectralDataRow = min(spectralDataRow, maxSpectrum);
+figure; hold on 
+
+plot( max(spectralDataRow, [], 1), 'DisplayName', 'after max');
+plot(maxSpectrum, 'DisplayName', 'white max');
+legend
+spectralDataRow = reshape(spectralData, [m*n, w]);
+hold on; 
+plot( max(spectralDataRow, [], 1), 'DisplayName', 'before max');
+if system_dependent('IsDebugMode')==1, dbquit all; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\NormalizeHSI.m',78,1)">78  </a>spectralData = reshape(spectralDataRow, [m, n, w]);
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',57,1)">57  </a>if ~strcmp(option, 'raw')
+figure; 
+for i = 1:30
+hold on; plot(actualSpectralVals(i,:));
+end 
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',57,1)">57  </a>if ~strcmp(option, 'raw')
+figure; 
+for i = 1:30
+hold on; plot(actualSpectralVals(i,:));
+end 
+if system_dependent('IsDebugMode')==1, dbcont; end
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotColorChartSpectra.m',86,1)">86  </a>    plotColors = GetColorChartColors(curveNames);
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',14,1)">14  </a>Plots(5, @PlotColorChartSpectra, measured, lineNames, 'measured');
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorChartColors.m',83,1)">83  </a>if ~isempty(c)
+if system_dependent('IsDebugMode')==1, dbquit; end
+closeall 
+{Unrecognized function or variable 'closeall'.
+} 
+close all
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetColorChartColors.m',28,1)">28  </a>    switch colorNames{i}
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+colorNames{i}
+
+ans =
+
+    'neutral 3.5 (1.05 D)'
+
+if system_dependent('IsDebugMode')==1, dbquit all; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',14,1)">14  </a>Plots(5, @PlotColorChartSpectra, measured, lineNames, 'measured');
+if system_dependent('IsDebugMode')==1, dbcont; end
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference.png.
+{Cannot find an exact (case-sensitive) match for 'applyRowFunc'
+
+The closest match is: ApplyRowFunc in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\methods\ApplyRowFunc.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 27)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',27,0)">line 27</a>)
+gofs = applyRowFunc(@GoodnessOfFit, measured, expected);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra,
+    lineNames);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',27,1)">27  </a>gofs = applyRowFunc(@GoodnessOfFit, measured, expected);
+opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',27,0)
+if system_dependent('IsDebugMode')==1, dbquit; end
+GetSetting('colorPatchOrder')
+
+ans =
+
+  0×0 empty <a href="matlab:helpPopup char" style="font-weight:bold">char</a> array
+
+GetSetting('colorPatchOrder')
+
+ans =
+
+  0×0 empty <a href="matlab:helpPopup char" style="font-weight:bold">char</a> array
+
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m',26,1)">26  </a>    case 'colorchartSpectra'
+if system_dependent('IsDebugMode')==1, dbcont; end
+clear all 
+fullfile(GetSetting('datasetSettingsDir'), strcat(colorPatchOrder, 'PatchOrder.txt')
+ fullfile(GetSetting('datasetSettingsDir'), strcat(colorPatchOrder, 'PatchOrder.txt')
+                                                                                     ↑
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses.
+Otherwise, check for mismatched delimiters.
+} 
+fullfile(GetSetting('datasetSettingsDir'), strcat(colorPatchOrder, 'PatchOrder.txt'))
+{Unrecognized function or variable 'colorPatchOrder'.
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m',46,1)">46  </a>        if isempty(colorPatchOrder)
+close all 
+if system_dependent('IsDebugMode')==1, dbquit; end
+SetSetting('colorPatchOrder', 'redRight');
+--Setting [colorPatchOrder] to redRight.
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+{Unrecognized function or variable 'targetName'.
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetExpectedValues.m',46,1)">46  </a>        if isempty(colorPatchOrder)
+load('last_run.mat')
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',25,1)">25  </a>[expectedSpectra, patchNames, expectedWavelengths] = GetExpectedValues();
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',14,1)">14  </a>Plots(5, @PlotColorChartSpectra, measured, lineNames, 'measured');
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 14)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',14,0)">line 14</a>)
+if system_dependent('IsDebugMode')==1, dbcont; end
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference.png.
+Values adjusted so that white 9.5 (.05 D) line is assinged to value 0.9 
+with multiplication by alpha = 0.810 
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured-adjusted.png.
+{Cannot find an exact (case-sensitive) match for 'plots'
+
+The closest match is: Plots in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 37)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',37,0)">line 37</a>)
+plots(8, @PlotColorChartSpectra, differenceAdjusted, lineNames, 'difference-adjusted');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra,
+    lineNames);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',37,1)">37  </a>plots(8, @PlotColorChartSpectra, differenceAdjusted, lineNames, 'difference-adjusted');
+opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',37,0)
+if system_dependent('IsDebugMode')==1, dbquit all; end
+close all 
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference.png.
+Values adjusted so that white 9.5 (.05 D) line is assinged to value 0.9 
+with multiplication by alpha = 0.810 
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured-adjusted.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference-adjusted.png.
+close all
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference.png.
+Values adjusted so that white 9.5 (.05 D) line is assinged to value 0.9 
+with multiplication by alpha = 0.585 
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured-adjusted.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference-adjusted.png.
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',57,1)">57  </a>if ~strcmp(option, 'raw')
+size(actualSpectralVals)
+
+ans =
+
+    30   401
+
+size(reorderedSpectralVals)
+
+ans =
+
+    24    36
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+close all 
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',57,1)">57  </a>if ~strcmp(option, 'raw')
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Cannot find an exact (case-sensitive) match for 'getWavelengths'
+
+The closest match is: GetWavelengths in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetWavelengths.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('AdjustTargetWavelengths', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\AdjustTargetWavelengths.m', 17)" style="font-weight:bold">AdjustTargetWavelengths</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\AdjustTargetWavelengths.m',17,0)">line 17</a>)
+newWavelengths = getWavelengths(m);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('PlotColorChartSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotColorChartSpectra.m', 133)" style="font-weight:bold">PlotColorChartSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotColorChartSpectra.m',133,0)">line 133</a>)
+            spectrum = AdjustTargetWavelengths(vals(i,:), 'del');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Plots', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m', 24)" style="font-weight:bold">Plots</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m',24,0)">line 24</a>)
+funcName(newVarargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 13)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',13,0)">line 13</a>)
+Plots(4, @PlotColorChartSpectra, expected, lineNames, 'expected');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra,
+    lineNames);
+} 
+opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\AdjustTargetWavelengths.m',17,0)
+if system_dependent('IsDebugMode')==1, dbquit all; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured.png.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',18,1)">18  </a>expected = expected(:, x);
+if system_dependent('IsDebugMode')==1, dbquit all; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured.png.
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetWavelengths', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetWavelengths.m', 36)" style="font-weight:bold">GetWavelengths</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetWavelengths.m',36,0)">line 36</a>)
+Unsupported wavelength range
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('AdjustTargetWavelengths', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\AdjustTargetWavelengths.m', 17)" style="font-weight:bold">AdjustTargetWavelengths</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\AdjustTargetWavelengths.m',17,0)">line 17</a>)
+newWavelengths = GetWavelengths(m);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 22)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',22,0)">line 22</a>)
+measuredDecim = AdjustTargetWavelengths(measured, 'standard');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra,
+    lineNames);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetWavelengths.m',36,1)">36  </a>            error('Unsupported wavelength range');
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('AdjustTargetWavelengths', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\AdjustTargetWavelengths.m', 17)" style="font-weight:bold">AdjustTargetWavelengths</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\AdjustTargetWavelengths.m',17,0)">line 17</a>)
+if system_dependent('IsDebugMode')==1, dbquit all; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference.png.
+{The logical indices in position 1 contain a true value outside of the array bounds.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('AdjustSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\AdjustSpectra.m', 23)" style="font-weight:bold">AdjustSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\AdjustSpectra.m',23,0)">line 23</a>)
+        alpha = white95Val / max(inSpectra(white95Idx, :));
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 32)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',32,0)">line 32</a>)
+[adjusted, alphaCoeff] = AdjustSpectra(measured, lineNames, 'toRatio');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra,
+    lineNames);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\AdjustSpectra.m',23,1)">23  </a>        alpha = white95Val / max(inSpectra(white95Idx, :));
+size(inSpectra)
+
+ans =
+
+     1   311
+
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 32)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',32,0)">line 32</a>)
+if system_dependent('IsDebugMode')==1, dbquit; end
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured.png.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',20,1)">20  </a>measured = AdjustRange(measured);
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference.png.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',29,1)">29  </a>rmses = ApplyRowFunc(@Rmse, measuredDecim, expected);
+if system_dependent('IsDebugMode')==1, dbcont; end
+Values adjusted so that white 9.5 (.05 D) line is assinged to value 0.9 
+with multiplication by alpha = 0.583 
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured-adjusted.png.
+{Matrix dimensions must agree.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('CompareSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m', 37)" style="font-weight:bold">CompareSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',37,0)">line 37</a>)
+differenceAdjusted = expected - adjusted;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluateColorchart', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m', 58)" style="font-weight:bold">EvaluateColorchart</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluateColorchart.m',58,0)">line 58</a>)
+    [T, adjustedSpectra, alphaCoeff] = CompareSpectra(standardSpectra, measuredSpectra,
+    lineNames);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\CompareSpectra.m',37,1)">37  </a>differenceAdjusted = expected - adjusted;
+if system_dependent('IsDebugMode')==1, dbquit all; end
+close all 
+[T, measuredSpectra, adjustedSpectra, alphaCoeff] = EvaluateColorchart(targetName,allowRoiSelection);
+
+min_white_minus_black =
+
+   -0.0021
+
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm.
+Loaded file for color chart mask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\20210629_153942_colorchart.hsm_patchMask.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\expected.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference.png.
+Values adjusted so that white 9.5 (.05 D) line is assinged to value 0.9 
+with multiplication by alpha = 0.583 
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\measured-adjusted.png.
+--Setting [plotName] to ..\..\..\output\hsi\test2021628\difference-adjusted.png.
+T
+
+T =
+
+  24×7 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+             <strong>Patch</strong>                <strong>GoF</strong>        <strong>NMSE</strong>        <strong>RMSE</strong>      <strong>AdjGoF</strong>      <strong>AdjNMSE</strong>      <strong>AdjRMSE</strong> 
+    <strong>________________________</strong>    <strong>_______</strong>    <strong>________</strong>    <strong>________</strong>    <strong>_______</strong>    <strong>__________</strong>    <strong>________</strong>
+
+    {'dark skin'           }     0.9943    0.052234    0.033207     0.9943       0.12825    0.039719
+    {'light skin'          }    0.99206      0.2996     0.32851    0.99206      0.016261     0.05842
+    {'blue sky'            }    0.99542    0.091833     0.07545    0.99542      0.074507    0.051877
+    {'foliage'             }    0.99291    0.035172    0.022748    0.99291       0.17445    0.038671
+    {'blue flower'         }    0.99854     0.18502     0.17114    0.99854      0.016611    0.039142
+    {'bluish green'        }    0.99539     0.24027     0.23118    0.99539       0.01353    0.041876
+    {'orange'              }    0.99751     0.28207     0.30131    0.99751     0.0053959    0.031811
+    {'purplish blue'       }      0.984     0.33422     0.16629      0.984      0.032525    0.039597
+    {'moderate red'        }    0.99608     0.22784     0.23629    0.99608      0.013717    0.044255
+    {'purple'              }    0.98743     0.35378     0.15216    0.98743      0.025949    0.031456
+    {'yellow green'        }    0.99782     0.19935     0.19748    0.99782      0.014915    0.041233
+    {'orange yellow'       }    0.99806     0.29539      0.3487    0.99806     0.0039288    0.030697
+    {'blue'                }    0.98864     0.29101    0.095156    0.98864      0.023943    0.020835
+    {'green'               }    0.98122     0.15819    0.082272    0.98122      0.078684    0.044291
+    {'red'                 }    0.99779     0.24965     0.26959    0.99779     0.0069839    0.034419
+    {'yellow'              }    0.99894     0.25281     0.39113    0.99894     0.0041316    0.038168
+    {'magenta'             }    0.99667     0.30643      0.3581    0.99667     0.0066805     0.04036
+    {'cyan'                }     0.9924     0.17593     0.12237     0.9924      0.036103    0.042316
+    {'white 9.5 (.05 D)'   }     0.9999     0.26377     0.60159     0.9999     0.0012303    0.031362
+    {'neutral 8 (.23 D)'   }    0.99979     0.32414     0.43883    0.99979    0.00086888    0.017343
+    {'neutral 6.5 (.44 D)' }    0.99958     0.28184     0.24358    0.99958     0.0011096    0.011666
+    {'neutral 5 (.70 D)'   }    0.99972      0.3404     0.14531    0.99972     0.0017735    0.008006
+    {'neutral 3.5 (1.05 D)'}      0.999    0.084015    0.029289      0.999      0.067392    0.020024
+    {'black 2 (1.5 D)'     }    0.93317      1.2432    0.021282    0.93317        3.1075    0.025684
+
+T = removevars(T, {'GoF','NMSE','RMSE'});
+T
+
+T =
+
+  24×4 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+             <strong>Patch</strong>              <strong>AdjGoF</strong>      <strong>AdjNMSE</strong>      <strong>AdjRMSE</strong> 
+    <strong>________________________</strong>    <strong>_______</strong>    <strong>__________</strong>    <strong>________</strong>
+
+    {'dark skin'           }     0.9943       0.12825    0.039719
+    {'light skin'          }    0.99206      0.016261     0.05842
+    {'blue sky'            }    0.99542      0.074507    0.051877
+    {'foliage'             }    0.99291       0.17445    0.038671
+    {'blue flower'         }    0.99854      0.016611    0.039142
+    {'bluish green'        }    0.99539       0.01353    0.041876
+    {'orange'              }    0.99751     0.0053959    0.031811
+    {'purplish blue'       }      0.984      0.032525    0.039597
+    {'moderate red'        }    0.99608      0.013717    0.044255
+    {'purple'              }    0.98743      0.025949    0.031456
+    {'yellow green'        }    0.99782      0.014915    0.041233
+    {'orange yellow'       }    0.99806     0.0039288    0.030697
+    {'blue'                }    0.98864      0.023943    0.020835
+    {'green'               }    0.98122      0.078684    0.044291
+    {'red'                 }    0.99779     0.0069839    0.034419
+    {'yellow'              }    0.99894     0.0041316    0.038168
+    {'magenta'             }    0.99667     0.0066805     0.04036
+    {'cyan'                }     0.9924      0.036103    0.042316
+    {'white 9.5 (.05 D)'   }     0.9999     0.0012303    0.031362
+    {'neutral 8 (.23 D)'   }    0.99979    0.00086888    0.017343
+    {'neutral 6.5 (.44 D)' }    0.99958     0.0011096    0.011666
+    {'neutral 5 (.70 D)'   }    0.99972     0.0017735    0.008006
+    {'neutral 3.5 (1.05 D)'}      0.999      0.067392    0.020024
+    {'black 2 (1.5 D)'     }    0.93317        3.1075    0.025684
+
+clear all 
+close all 
+load('last_run.mat')
+experiment = 'test2021628';
+dataDate = '20210628';
+option = GetSetting('normalization');
+
+fileConditions = GetFileConditions('colorchart', targetName);
+[filename, tableId] = GetFilename(fileConditions{:});
+[filename, tableId] = GetFilename([], 'tissue', [], [], [], 132, []);
+{Unrecognized function or variable 'initialIntegrationTime'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetFilename', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetFilename.m', 38)" style="font-weight:bold">GetFilename</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetFilename.m',38,0)">line 38</a>)
+if outRow.IntegrationTime ~= initialIntegrationTime
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetFilename.m',38,1)">38  </a>if outRow.IntegrationTime ~= initialIntegrationTime
+if system_dependent('IsDebugMode')==1, dbquit; end
+[filename, tableId] = GetFilename([], 'tissue', [], [], [], 132, []);
+{Unrecognized function or variable 'initialIntegrationTime'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetFilename', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetFilename.m', 38)" style="font-weight:bold">GetFilename</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetFilename.m',38,0)">line 38</a>)
+if outRow.IntegrationTime ~= initialIntegrationTime
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\GetFilename.m',38,1)">38  </a>if outRow.IntegrationTime ~= initialIntegrationTime
+if system_dependent('IsDebugMode')==1, dbquit; end
+[filename, tableId] = GetFilename([], 'tissue', [], [], [], 132, []);
+filename
+
+filename =
+
+    '20210629_151229_B21-04274 test.hsm'
+
+i1 = spectralData = NormalizeHSI(num2str(tableId));
+ i1 = spectralData = NormalizeHSI(num2str(tableId));
+                   ↑
+{Error: Incorrect use of '=' operator. To assign a value to a variable, use '='. To compare
+values for equality, use '=='.
+} 
+i1 = NormalizeHSI(num2str(132));;
+
+min_white_minus_black =
+
+   -0.0019
+
+close all 
+SetSetting('normalization', 'raw');
+--Setting [normalization] to raw.
+i1 = NormalizeHSI(num2str(132));
+
+imgList = {i1};
+coordinates = [400,300];
+descriptionList = {'Raw - 618ms'};
+isNormalized = false; 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+{Unrecognized function or variable 'key'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('PlotSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m', 44)" style="font-weight:bold">PlotSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',44,0)">line 44</a>)
+    h(i) = plot(x, spectrum, 'DisplayName', key{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Plots', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m', 24)" style="font-weight:bold">Plots</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m',24,0)">line 24</a>)
+funcName(newVarargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 51)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',51,0)">line 51</a>)
+    Plots(2, @PlotSpectra, curves, names, 420:730, 'Measurement', 'Raw Measurements',
+    colors);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',44,1)">44  </a>    h(i) = plot(x, spectrum, 'DisplayName', key{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Plots', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m', 24)" style="font-weight:bold">Plots</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m',24,0)">line 24</a>)
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 51)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',51,0)">line 51</a>)
+if system_dependent('IsDebugMode')==1, dbquit all; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+{Unrecognized function or variable 'key'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('PlotSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m', 44)" style="font-weight:bold">PlotSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',44,0)">line 44</a>)
+    h(i) = plot(x, spectrum, 'DisplayName', key{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Plots', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m', 24)" style="font-weight:bold">Plots</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m',24,0)">line 24</a>)
+funcName(newVarargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 51)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',51,0)">line 51</a>)
+    Plots(2, @PlotSpectra, curves, names, 380:780, 'Measurement', 'Raw Measurements',
+    colors);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',44,1)">44  </a>    h(i) = plot(x, spectrum, 'DisplayName', key{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+if system_dependent('IsDebugMode')==1, dbquit; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+{Unrecognized function or variable 'key'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('PlotSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m', 44)" style="font-weight:bold">PlotSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',44,0)">line 44</a>)
+    h(i) = plot(x, spectrum, 'DisplayName', key{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Plots', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m', 24)" style="font-weight:bold">Plots</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m',24,0)">line 24</a>)
+funcName(newVarargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 51)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',51,0)">line 51</a>)
+    Plots(2, @PlotSpectra, curves, names, 380:780, 'Measurement', 'Raw Measurements',
+    colors);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',44,1)">44  </a>    h(i) = plot(x, spectrum, 'DisplayName', key{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+if system_dependent('IsDebugMode')==1, dbquit all; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot')" style="font-weight:bold">plot</a>
+Invalid RGB triplet. Specify a three-element vector of values between 0 and 1.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('PlotSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m', 44)" style="font-weight:bold">PlotSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',44,0)">line 44</a>)
+    h(i) = plot(x, spectrum, 'DisplayName', names{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Plots', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m', 24)" style="font-weight:bold">Plots</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m',24,0)">line 24</a>)
+funcName(newVarargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 51)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',51,0)">line 51</a>)
+    Plots(2, @PlotSpectra, curves, names, 380:780, 'Measurement', 'Raw Measurements',
+    colors);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',44,1)">44  </a>    h(i) = plot(x, spectrum, 'DisplayName', names{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+colors{i}
+
+ans =
+
+  1×1 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {1×1 cell}
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+{Conversion to cell from char is not possible.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+        names(k) = strrep(descriptionList{i}, '-', num2str(j)+' _');
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,1)">40  </a>        names(k) = strrep(descriptionList{i}, '-', num2str(j)+' _'); 
+if system_dependent('IsDebugMode')==1, dbquit; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',41,1)">41  </a>for i = 1:curveN
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Cannot find an exact (case-sensitive) match for 'savePlot'
+
+The closest match is: SavePlot in D:\elena\Google
+Drive\titech\research\experiments\macroHSI\src\matlab\plot\SavePlot.m
+
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('PlotSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m', 66)" style="font-weight:bold">PlotSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',66,0)">line 66</a>)
+savePlot(fig);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Plots', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m', 24)" style="font-weight:bold">Plots</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m',24,0)">line 24</a>)
+funcName(newVarargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 51)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',51,0)">line 51</a>)
+    Plots(2, @PlotSpectra, curves, names, 380:780, 'Measurement', 'Raw Measurements',
+    colors);
+} 
+if system_dependent('IsDebugMode')==1, dbquit; end
+coordinates = [400,300; 200, 150];
+
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+{Index exceeds the number of array elements (1).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+        names{k} = strrep(descriptionList{i}, '-', num2str(j)+' _');
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,1)">40  </a>        names{k} = strrep(descriptionList{i}, '-', num2str(j)+' _'); 
+if system_dependent('IsDebugMode')==1, dbquit; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+{Index exceeds the number of array elements (1).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+        names{k} = strrep(descriptionList{i}, '-', num2str(j)+' _');
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,1)">40  </a>        names{k} = strrep(descriptionList{i}, '-', num2str(j)+' _'); 
+if system_dependent('IsDebugMode')==1, dbquit; end
+descriptionList = {'P1', 'P2'};
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)
+opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,1)">40  </a>        names{k} = strrep(descriptionList{i}, '-', num2str(j)+' _'); 
+strrep(descriptionList{i}, '-', num2str(j)+' _')
+[Warning: Inputs must be character vectors, cell arrays of character vectors, or string
+arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 40)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',40,0)">line 40</a>)
+] 
+
+ans =
+
+    'P1'
+
+num2str(j)+' _'
+
+ans =
+
+    81   144
+
+j
+
+j =
+
+     1
+
+num2str(j)
+
+ans =
+
+    '1'
+
+num2str(j)+' _'
+
+ans =
+
+    81   144
+
+strcat(num2str(j),' _')
+
+ans =
+
+    '1 _'
+
+if system_dependent('IsDebugMode')==1, dbquit all; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+{Index exceeds the number of array elements (1).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 48)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',48,0)">line 48</a>)
+            colors(k) = lineColorMap(key{i});
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',48,1)">48  </a>            colors(k) = lineColorMap(key{i});
+lineColorMap = GetLineColorMap('custom', curvesN)
+
+lineColorMap = 
+
+  <a href="matlab:helpPopup containers.Map"style="font-weight:bold">Map</a> with properties:
+
+        Count: 1
+      KeyType: double
+    ValueType: any
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m',11,1)">11  </a>switch style
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+length(names)
+
+ans =
+
+     1
+
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 34)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',34,0)">line 34</a>)
+if system_dependent('IsDebugMode')==1, dbquit all; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m',11,1)">11  </a>switch style
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('containers.Map')" style="font-weight:bold">containers.Map</a>
+Unsupported key specified.  See documentation for valid key types.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetLineColorMap', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m', 43)" style="font-weight:bold">GetLineColorMap</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m',43,0)">line 43</a>)
+lineColorMap = containers.Map(key, value);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 31)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',31,0)">line 31</a>)
+lineColorMap = GetLineColorMap('custom', names); %'custom-hsv'
+} 
+if system_dependent('IsDebugMode')==1, dbquit; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+{Conversion to cell from double is not possible.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 53)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',53,0)">line 53</a>)
+            colors(k) = lineColorMap(key{i});
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',53,1)">53  </a>            colors(k) = lineColorMap(key{i});
+lineColorMap(key{i})
+
+ans =
+
+     0     0     1
+
+if system_dependent('IsDebugMode')==1, dbquit all; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+ColOrd = get(gca,'ColorOrder');
+  show_colors(rgb)
+{Unrecognized function or variable 'rgb'.
+} 
+show_colors(ColOrd)
+{Unrecognized function or variable 'show_colors'.
+} 
+close all 
+show_colors(ColOrd)
+{Unrecognized function or variable 'show_colors'.
+} 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+{Unrecognized function or variable 'rgb'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetLineColorMap', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m', 29)" style="font-weight:bold">GetLineColorMap</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m',29,0)">line 29</a>)
+        value = rgb(length(names));
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 41)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',41,0)">line 41</a>)
+lineColorMap = GetLineColorMap('rgb', names); %'custom-hsv'
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m',29,1)">29  </a>        value = rgb(length(names));
+if system_dependent('IsDebugMode')==1, dbquit all; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('containers.Map')" style="font-weight:bold">containers.Map</a>
+The number of keys and values must be the same.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetLineColorMap', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m', 43)" style="font-weight:bold">GetLineColorMap</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m',43,0)">line 43</a>)
+lineColorMap = containers.Map(key, value);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 19)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',19,0)">line 19</a>)
+lineColorMap = GetLineColorMap('custom', num2str(coordinates(:,1))); %'custom-hsv'
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m',43,1)">43  </a>lineColorMap = containers.Map(key, value);
+if system_dependent('IsDebugMode')==1, dbquit; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+{Brace indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GetLineColorMap', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m', 10)" style="font-weight:bold">GetLineColorMap</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m',10,0)">line 10</a>)
+if isempty(names{1})
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 19)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',19,0)">line 19</a>)
+lineColorMap = GetLineColorMap('custom', num2str(coordinates(:,1))); %'custom-hsv'
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m',10,1)">10  </a>if isempty(names{1})
+if system_dependent('IsDebugMode')==1, dbquit; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('containers.Map/subsref')" style="font-weight:bold">containers.Map/subsref</a>
+The specified key is not present in this container.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 24)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',24,0)">line 24</a>)
+    plot(coordinates(i, 2),coordinates(i, 1), 'x', 'MarkerSize', 20, 'MarkerColor',
+    lineColorMap(num2str(i)), 'LineWidth', 5);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',24,1)">24  </a>    plot(coordinates(i, 2),coordinates(i, 1), 'x', 'MarkerSize', 20, 'MarkerColor', lineColorMap(num2str(i)), 'LineWidth', 5);
+if system_dependent('IsDebugMode')==1, dbquit; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\GetLineColorMap.m',11,1)">11  </a>    for i = 1:length(names)
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+norm1 = NormalizeHSI(num2str(132));
+imgList = {norm1};
+descriptionList = {'P1', 'P2'};
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized); 
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+SetSetting('normalization', 'byPixel');
+--Setting [normalization] to byPixel.
+norm1 = NormalizeHSI(num2str(132));
+
+min_white_minus_black =
+
+   -0.0019
+
+imgList = {norm1};
+descriptionList = {'P1', 'P2'};
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized); 
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',53,1)">53  </a>xlabel('Wavelength (nm)', 'FontSize', 15);
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Plots', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m', 24)" style="font-weight:bold">Plots</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m',24,0)">line 24</a>)
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 66)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',66,0)">line 66</a>)
+if system_dependent('IsDebugMode')==1, dbquit; end
+SetSetting('normalization', 'raw');
+--Setting [normalization] to raw.
+i1 = NormalizeHSI(num2str(132));
+
+imgList = {i1};
+coordinates = [400,300; 200, 150];
+descriptionList = {'P1', 'P2'};
+isNormalized = false; 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',53,1)">53  </a>xlabel('Wavelength (nm)', 'FontSize', 15);
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+SetSetting('normalization', 'byPixel');
+--Setting [normalization] to byPixel.
+norm1 = NormalizeHSI(num2str(132));
+
+min_white_minus_black =
+
+   -0.0019
+
+imgList = {norm1};
+descriptionList = {'P1', 'P2'};
+isNormalized = true;
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized); 
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_raw.jpn.
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot')" style="font-weight:bold">plot</a>
+Vectors must be the same length.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('PlotSpectra', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m', 44)" style="font-weight:bold">PlotSpectra</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',44,0)">line 44</a>)
+    h(i) = plot(x, spectrum, 'DisplayName', names{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Plots', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m', 24)" style="font-weight:bold">Plots</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\Plots.m',24,0)">line 24</a>)
+funcName(newVarargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 63)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',63,0)">line 63</a>)
+    Plots(2, @PlotSpectra, curves, names, 420:730, 'Reflectance', 'Normalized Measurements',
+    colors);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\plot\PlotSpectra.m',44,1)">44  </a>    h(i) = plot(x, spectrum, 'DisplayName', names{i}, 'Color', colors{i}, 'LineWidth', 1.5);
+In workspace belonging to <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 63)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',63,0)">line 63</a>)
+if system_dependent('IsDebugMode')==1, dbquit all; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+{Unable to perform assignment because the size of the left side is 1-by-401 and the size of
+the right side is 1-by-311.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 41)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',41,0)">line 41</a>)
+            curves(k,:) = AdjustRange(img(coordinates(i, 1),coordinates(i, 2),:), 'crop');
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',41,1)">41  </a>            curves(k,:) = AdjustRange(img(coordinates(i, 1),coordinates(i, 2),:), 'crop');
+if system_dependent('IsDebugMode')==1, dbstep; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',52,1)">52  </a>lineColorMap = GetLineColorMap('custom', names); %'custom-hsv'
+if system_dependent('IsDebugMode')==1, dbcont; end
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_raw.jpn.
+imgList = {i1};
+coordinates = [350,300; 200,150];
+descriptionList = {'P1', 'P2'};
+isNormalized = false; 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_norm.jpn.
+
+SetSetting('normalization', 'byPixel');
+--Setting [normalization] to byPixel.
+norm1 = NormalizeHSI(num2str(132));
+
+min_white_minus_black =
+
+   -0.0019
+
+imgList = {norm1};
+descriptionList = {'P1', 'P2'};
+isNormalized = true;
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized); 
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\testCalibration\InitialAnalysis\sampleCurves_raw.jpn.
+clear all 
+close all 
+help unique
+ <strong>unique</strong> Set unique.
+    C = <strong>unique</strong>(A) for the array A returns the same values as in A but with 
+    no repetitions. C will be sorted.    
+   
+    C = <strong>unique</strong>(A,'rows') for the matrix A returns the unique rows of A.
+    The rows of the matrix C will be in sorted order.
+   
+    [C,IA,IC] = <strong>unique</strong>(A) also returns index vectors IA and IC such that
+    C = A(IA) and A = C(IC) (or A(:) = C(IC), if A is a matrix or array).  
+   
+    [C,IA,IC] = <strong>unique</strong>(A,'rows') also returns index vectors IA and IC such
+    that C = A(IA,:) and A = C(IC,:). 
+   
+    [C,IA,IC] = <strong>unique</strong>(A,OCCURRENCE) and
+    [C,IA,IC] = <strong>unique</strong>(A,'rows',OCCURRENCE) specify which index is returned
+    in IA in the case of repeated values (or rows) in A. The default value
+    is OCCURRENCE = 'first', which returns the index of the first occurrence 
+    of each repeated value (or row) in A, while OCCURRENCE = 'last' returns
+    the index of the last occurrence of each repeated value (or row) in A.
+   
+    [C,IA,IC] = <strong>unique</strong>(A,'stable') returns the values of C in the same order
+    that they appear in A, while [C,IA,IC] = <strong>unique</strong>(A,'sorted') returns the
+    values of C in sorted order. If A is a row vector, then C will be a row
+    vector as well, otherwise C will be a column vector. IA and IC are
+    column vectors. If there are repeated values in A, then IA returns the
+    index of the first occurrence of each repeated value.
+  
+    [C,IA,IC] = <strong>unique</strong>(A,'rows','stable') returns the rows of C in the same
+    order that they appear in A, while [C,IA,IC] = <strong>unique</strong>(A,'rows','sorted')
+    returns the rows of C in sorted order.
+  
+    The behavior of <strong>unique</strong> has changed.  This includes:
+      -	occurrence of indices in IA and IC switched from last to first
+      -	IA and IC will always be column index vectors
+  
+    If this change in behavior has adversely affected your code, you may 
+    preserve the previous behavior with:
+  
+         [C,IA,IC] = <strong>unique</strong>(A,'legacy')
+         [C,IA,IC] = <strong>unique</strong>(A,'rows','legacy') 
+         [C,IA,IC] = <strong>unique</strong>(A,OCCURRENCE,'legacy')
+         [C,IA,IC] = <strong>unique</strong>(A,'rows',OCCURRENCE,'legacy')
+ 
+    Examples:
+ 
+        a = [9 9 9 9 9 9 8 8 8 8 7 7 7 6 6 6 5 5 4 2 1]
+ 
+        [c1,ia1,ic1] = unique(a)
+        % returns
+        c1 = [1 2 4 5 6 7 8 9]
+        ia1 = [21 20 19 17 14 11 7 1]'
+        ic1 = [8 8 8 8 8 8 7 7 7 7 6 6 6 5 5 5 4 4 3 2 1]'
+ 
+        [c2,ia2,ic2] = unique(a,'stable')
+        % returns
+        c2 = [9 8 7 6 5 4 2 1]
+        ia2 = [1 7 11 14 17 19 20 21]'
+        ic2 = [1 1 1 1 1 1 2 2 2 2 3 3 3 4 4 4 5 5 6 7 8]'
+ 
+        c = unique([1 NaN NaN 2])
+        % NaNs compare as not equal, so this returns
+        c = [1 2 NaN NaN]
+ 
+    Class support for input A:
+       - logical, char, all numeric classes
+       - cell arrays of strings
+       -- 'rows' option is not supported for cell arrays
+       - objects with methods SORT (SORTROWS for the 'rows' option) and NE
+       -- including heterogeneous arrays
+ 
+    See also <a href="matlab:help uniquetol">uniquetol</a>, <a href="matlab:help intersect">intersect</a>, <a href="matlab:help ismember">ismember</a>, <a href="matlab:help ismembertol">ismembertol</a>, <a href="matlab:help union">union</a>, <a href="matlab:help setdiff">setdiff</a>,
+             <a href="matlab:help setxor">setxor</a>, <a href="matlab:help sort">sort</a>, <a href="matlab:help sortrows">sortrows</a>.
+
+    <a href="matlab:doc unique">Documentation for unique</a>
+    <a href="matlab:matlab.internal.language.introspective.overloads.displayOverloads('unique')">Other functions named unique</a>
+
+unique({'a', 'b', 'a'})
+
+ans =
+
+  1×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'a'}    {'b'}
+

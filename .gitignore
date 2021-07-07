@@ -5,3 +5,5 @@
 *-checkpoint.ipynb
 .ipynb_checkpoints
 *__pycache__*
+src/matlab/log.txt
+src/matlab/parameters/configuration.mat
