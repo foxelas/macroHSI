@@ -47,16 +47,22 @@
 	matfilein, , string
 	matfileinv73, , string
 	matfileout, , string
-	normByPixel, 0, logical
 	normFilename, , string
 	saveFolder, , string
-	integrationTime, , double
+	integrationTime, 618, double
 	experiment, , string
-	configuration, , string
+	configuration, singleLightClose, string
 	splitWavelength, 540, double
 	targetPosition, , string
 	isRotated, 1, logical
 	pcHasGPU, 0, logical
 	normalization, byPixel, string
 	colorPatchOrder, , string
-	database, , string
+	database, psl, string
+	isTest, 0, logical
+	mspiDir, ..\..\..\..\..\..\..\mspi, string
+	hsiTestDir, 2_saitamaHSI, string
+	hsiDataDir, 3_skinHSI\skin samples, string
+	blackContent, black, string
+	whiteContent, white, string
+	

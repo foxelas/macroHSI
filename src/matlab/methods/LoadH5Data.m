@@ -34,20 +34,26 @@ end
 
 function currentFile = AdjustFilename(filename, targetDir)
 
-if isempty(targetDir)
+if isempty(targetDir) 
     indir = GetSetting('datadir');
-
-    filenameParts = strsplit(filename, '_');
-    dataDate = filenameParts{1};
-    if ~contains(indir, dataDate)
-        filenameParts = strsplit(indir, '\\saitama');
-        ending = filenameParts{2};
-        filenameParts = strsplit(ending, '_');
-        oldDate = filenameParts{1};
-        indir = strrep(indir, oldDate, dataDate);
-    end
+    
+    if GetSetting('isTest')
+        filenameParts = strsplit(filename, '_');
+        dataDate = filenameParts{1};
+        if ~contains(indir, dataDate)
+            filenameParts = strsplit(indir, '\\saitama');
+            ending = filenameParts{2};
+            filenameParts = strsplit(ending, '_');
+            oldDate = filenameParts{1};
+            indir = strrep(indir, oldDate, dataDate);
+        end
+    end 
 else 
     indir = targetDir;
 end
 currentFile = fullfile(indir, filename);
+if ~contains(currentFile, '.h5')
+    currentFile = strcat(currentFile, '.h5');
+end 
+
 end

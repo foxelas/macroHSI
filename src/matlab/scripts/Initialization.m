@@ -9,25 +9,32 @@ originDir = 'D:\elena\mspi';
 SetOpt(userSettingsFile);
 
 %% Other settings
-if ~exist('dataDate', 'var')
-    dataDate = '20210127';
-    warning('Setting default date: 20210127.');
-end
-SetSetting('dataDate', dataDate);
+SetSetting('mspiDir', originDir);
 
-indir = fullfile(originDir, '2_saitamaHSI', strcat('saitama', dataDate, '_test'), 'h5');
-if exist('indirFolder', 'var') && ~isempty(indirFolder)
-    indir = fullfile(originDir, '2_saitamaHSI', strcat('saitama', dataDate, '_test'), indirFolder, 'h5');
-end
 
-if ~exist('dataBase', 'var')
-    dataBase = 'calib';
-    warning('Setting default database for calibration: calib.');
-end
-SetSetting('database', dataBase);
-
+if GetSetting('isTest')
+    if ~exist('dataDate', 'var')
+        dataDate = '20210127';
+        warning('Setting default date: 20210127.');
+    end
+    SetSetting('dataDate', dataDate);
+    
+    testDir = fullfile(GetSetting('mspiDir'), GetSetting('hsiTestDir'));
+    indir = fullfile(testDir, strcat('saitama', dataDate, '_test'), 'h5');
+    if exist('indirFolder', 'var') && ~isempty(indirFolder)
+        indir = fullfile(testDir, strcat('saitama', dataDate, '_test'), indirFolder, 'h5');
+    end  
+else 
+    hsiSkinDir = fullfile(GetSetting('mspiDir'), GetSetting('hsiDataDir'));
+    indir = fullfile(hsiSkinDir, 'h5');
+end 
 SetSetting('datadir', indir);
-matdir = fullfile(originDir, 'matfiles\hsi');
+
+if exist('database', 'var')
+    SetSetting('database', dataBase);
+end
+
+matdir = fullfile(GetSetting('mspiDir'), 'matfiles\hsi');
 SetSetting('matdir', matdir);
 
 if exist('experiment', 'var')
@@ -39,15 +46,9 @@ if exist('integrationTime', 'var')
     SetSetting('integrationTime', integrationTime);
 end
 
-if ~exist('configuration', 'var')
-    configuration = 'singleLightClose';
+if exist('configuration', 'var')
+    SetSetting('configuration', configuration);
 end
-SetSetting('configuration', configuration);
-
-if ~exist('normByPixel', 'var')
-    normByPixel = true;
-end
-SetSetting('normByPixel', normByPixel);
 
 if exist('targetPosition', 'var')
     SetSetting('targetPosition', targetPosition);

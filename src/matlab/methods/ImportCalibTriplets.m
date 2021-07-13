@@ -1,34 +1,61 @@
-function [] = ImportCalibTriplets(dataDate, experiment, queryParams)
+function [] = ImportCalibTriplets(queryParams)
 % ImportCalibTriplets prepares triplet .mat files using database info and a
 % queryCondition search criterion 
 %
 %   Usage:  
-%   queryParams = {[], {'hands', false}, 618};
-%   ImportCalibTriplets('20200112', 'handsDb');
+%   queryParams = {{'hands', false}, 618};
+%   ImportCalibTriplets(queryParams);
+%
+%   ImportCalibTriplets(); %imports the entire selected DB 
 
 StartLogger;
-normalization = 'byPixel';
-
 Initialization;
 
-if nargin < 3 
+experiment = strcat('import_', GetSetting('database'));
+SetSetting('experiment', experiment);
+
+readAll = false; 
+if nargin < 1 || isempty(queryParams)
+    readAll = true; 
+    queryParams = []; 
+end 
+
+if ~iscell(queryParams)
+    dataDate = queryParams;
     queryParams = {[], [], [], [], dataDate};
 end 
 
-[~, ~, outRows] = Query(queryParams{:});
+if readAll
+    outRows = GetDB();
+else
+    [~, ~, outRows] = Query(queryParams{:});
+end 
 
-setId = ~ismember(outRows.Content, 'lightsOff') & ~ismember(outRows.Content, 'whiteReflectance');
+setId = ~ismember(outRows.Content, GetSetting('blackContent')) & ~ismember(outRows.Content, GetSetting('whiteContent'));
 outRows = outRows(setId, :);
 
-integrationTimes = [outRows.IntegrationTime];
-dates = [outRows.CaptureDate];
-configurations = [outRows.Configuration];
+isTest = GetSetting('isTest');
+if isTest
+    integrationTimes = [outRows.IntegrationTime];
+    dates = [outRows.CaptureDate];
+
+    hasConfiguration = strcmp('Configuration',outRows.Properties.VariableNames);
+    if hasConfiguration 
+        configurations = [outRows.Configuration];
+    end 
+end 
+
 for i = 1:size(outRows,1)
     target = GetValueFromTable(outRows, 'Target', i);
     content = GetValueFromTable(outRows, 'Content', i);
-    SetSetting('integrationTime', integrationTimes(i));
-    SetSetting('dataDate', num2str(dates(i)));
-    SetSetting('configuration', configurations{i});
+    
+    if isTest
+        SetSetting('integrationTime', integrationTimes(i));
+        SetSetting('dataDate', num2str(dates(i)));
+        if hasConfiguration 
+            SetSetting('configuration', configurations{i});
+        end 
+    end 
     [spectralData] = ReadHSIData(content, target, experiment);
 end
 

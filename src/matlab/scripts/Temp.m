@@ -1,6 +1,7 @@
-experiment = 'test2021628';
+experiment = 'test2020628';
 dataDate = '20210628';
-ImportCalibTriplets(dataDate, experiment);
+ImportCalibTriplets(dataDate);
+SetSetting('experiment', experiment);
 
 imgList = {i1, i2};
 coordinates = [400,300; 200, 150];
@@ -37,4 +38,18 @@ norm1 = NormalizeHSI(num2str(132));
 imgList = {norm1};
 descriptionList = {'P1', 'P2'};
 isNormalized = true;
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized); 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ImportCalibTriplets('20210706');
+
+imgList = {i1, i2};
+coordinates = [400,300; 200, 150];
+descriptionList = {'Raw - 4000ms', 'Raw - 618ms'};
+isNormalized = false; 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+
+imgList = {i1./w1, i2./w2};
+descriptionList = {'Normalized - 4000ms', 'Normalized - 618ms'};
 EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized); 

@@ -34,7 +34,6 @@ if nargin < 6
     end
 end
 
-
     
 x = wavelengths; 
 h = zeros(curveN,1);

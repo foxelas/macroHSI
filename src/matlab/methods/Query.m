@@ -22,6 +22,10 @@ if nargin < 3
     id = [];
 end
 
+if ~GetSetting('isTest')
+    configuration = [];
+end 
+
 setId = true(numel(dataTable.ID), 1);
 
 if ~isempty(configuration)

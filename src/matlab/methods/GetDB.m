@@ -4,5 +4,8 @@ function dataTable = GetDB()
 %   Usage:
 %   dataTable = GetDB()
 
-dataTable = readtable(fullfile(GetSetting('datasetSettingsDir'), strcat(GetSetting('database'), 'DB.xlsx')), 'Sheet', 'capturedData');
+infile = fullfile(GetSetting('datasetSettingsDir'), strcat(GetSetting('database'), 'DB.xlsx'));
+opts = detectImportOptions(infile);
+opts = setvartype(opts,{'ID','IntegrationTime','IsUnfixed','IsBackside','CaptureDate', 'SampleID'},'double');
+dataTable = readtable(infile, opts); %'Sheet', 'capturedData'
 end
