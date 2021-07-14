@@ -29,46 +29,54 @@ end
 
 rng default % For reproducibility
 
+switch method 
+    case 'pca'
 %% PCA
-if strcmp(method, 'pca')
     [coeff, scores, latent, tsquared, explained] = pca(X, 'NumComponents', q);
     ds = struct('Method', 'pca', 'Transform', coeff, 'Latent', latent, 'Tsquared', tsquared, 'Explained', explained, 'RetainedNum', q);
-end
 
+    case 'rica' 
 %% RICA
-if strcmp(method, 'rica')
     Mdl = rica(X, q, 'IterationLimit', 100, 'Lambda', 1);
     coeff = Mdl.TransformWeights;
     scores = transform(Mdl, X); %X * coeff;
     objective = Mdl.FitInfo.Objective;
     ds = struct('Method', 'rica', 'Transform', coeff, 'RetainedNum', q, 'Objective', objective, 'Model', Mdl);
-end
 
+    case 'sf'
 %% SF: sparse filtering feature extraction 
-if strcmp(method, 'sf')
     Mdl = sparsefilt(X,q,'IterationLimit',100, 'Standardize', false);
     coeff = Mdl.TransformWeights;
     scores = transform(Mdl, X); %X * coeff;
     fitInfo = Mdl.FitInfo;
     ds = struct('Method', 'sf', 'Transform', coeff, 'RetainedNum', q, 'FitInfo', fitInfo, 'Model', Mdl);
-end 
 
+    case 'lda'
 %% LDA 
-if strcmp(method, 'lda')
     Mdl = fitcdiscr(X,labels, 'ClassNames', unique(labels), 'DiscrimType', 'linear', 'OptimizeHyperparameters','auto',...
     'HyperparameterOptimizationOptions', struct('AcquisitionFunctionName','expected-improvement-plus'));
     coeff = Mdl.Coeffs;
     scores = X * coeff;
     ds = struct('Method', 'lda', 'Transform', coeff, 'RetainedNum', q, 'Model', Mdl);
-end 
-
+ 
+    case 'qda'
 %% QDA
-if strcmp(method, 'qda')
     Mdl = fitcdiscr(X,labels, 'ClassNames', unique(labels), 'DiscrimType', 'quadratic', 'OptimizeHyperparameters','auto',...
     'HyperparameterOptimizationOptions', struct('AcquisitionFunctionName','expected-improvement-plus'));
     coeff = Mdl.Coeffs;
     scores = X * coeff;
-    ds = struct('Method', 'qda', 'Transform', coeff, 'RetainedNum', q, 'Model', Mdl);
+    ds = struct('Method', 'qda', 'Transform', coeff, 'RetainedNum', q, 'Model', Mdl); 
+
+    case 'tsne'
+%% TSNE 
+    coeff = [];
+    [scores, loss] = tsne(X,'Algorithm','barneshut','NumPCAComponents',50, 'NumDimensions',q, 'NumPrint',2, 'Verbose', 1);
+    ds = struct('Method', 'tsne', 'Loss', loss, 'RetainedNum', q, 'Algorithm','barneshut','NumPCAComponents', 50); 
+
+%% Otherwise
+    otherwise
+        warning('Unsupported dimension reduction method');
 end 
+
 
 end
