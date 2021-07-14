@@ -9,7 +9,7 @@ m = origSize(1);
 n = origSize(2);
 q = size(redHsi, 2);
 
-isMasked = nargin >= 3;
+isMasked = nargin >= 3 & ~isempty(mask);
 if isMasked
     outHsi = zeros(m, n, q);
     outHsiFlat = reshape(outHsi, [m * n, q]);

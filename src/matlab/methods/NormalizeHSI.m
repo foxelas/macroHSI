@@ -81,6 +81,10 @@ if useBlack
     %% Further check 
     spectralData = max(spectralData, 0);
     
+    %% Crop usable dimensions 
+    if strcmp(option, 'byPixel')
+        spectralData = AdjustRange(spectralData);
+    end   
 
 end
 

@@ -52,7 +52,7 @@ end
 xlabel('Wavelength (nm)', 'FontSize', 15);
 ylabel(yLabel, 'FontSize', 15);
 title(figTitle, 'FontSize', 15);
-legend(h, 'Location', 'SouthEast');
+legend(h, 'Location', 'NorthWest');
 xlim([min(wavelengths), max(wavelengths)]);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

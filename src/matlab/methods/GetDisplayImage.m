@@ -14,13 +14,7 @@ if nargin < 3
 end
 
 [m, n, z] = size(spectralImage);
-if (z < 401)
-    v = GetWavelengths(z, 'index');
-    spectralImage2 = zeros(m, n, 401);
-    spectralImage2(:, :, v) = spectralImage;
-    spectralImage = spectralImage2;
-    clear 'spectralImage2';
-end
+
 if HasGPU()
     spectralImage_ = gpuArray(spectralImage);
 else
@@ -34,6 +28,12 @@ switch method
         colImage = double(reshape(spectralImage_, [m * n, z]));
 
         [xyz, illumination] = PrepareParams(z);
+        if (z < 401)
+            v = GetWavelengths(z, 'index');
+            illumination = illumination(v);
+            xyz = xyz(v,:);
+        end
+        
         normConst = double(max(max(colImage)));
         colImage = colImage ./ normConst;
         colImage = bsxfun(@times, colImage, illumination);
@@ -50,6 +50,8 @@ switch method
 
     case 'channel'
         dispImage_ = rescale(spectralImage_(:, :, channel));
+    case 'no-bg'
+        dispImage_ = rescale(spectralImage_(:, :, 200));
     otherwise
         error('Unsupported method for display image reconstruction');
 end

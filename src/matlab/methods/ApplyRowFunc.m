@@ -6,23 +6,13 @@ function result = ApplyRowFunc(funcName, varargin)
 %   arguments varargin on each row of varargin
 %
 
-expectedArgs = nargin(funcName);
-if expectedArgs < 0
-    expectedArgs = numel(varargin);
-end
+applyToGivenRow = @(func, matrix, restArgs) @(row) func(matrix(row, :), restArgs{:});
+newApplyToRows = @(func, matrix, restArgs) arrayfun(applyToGivenRow(func, matrix, restArgs), 1:size(matrix,1), 'UniformOutput', false)';
+takeAll = @(x) reshape([x{:}], size(x{1},2), size(x,1))';
+genericApplyToRows  = @(func, matrix, restArgs) takeAll(newApplyToRows(func, matrix, restArgs));
 
-rows = size(varargin{1}, 1);
-result = cell(rows, 1);
-newVarargin = cell(1, expectedArgs);
-for i = 1:rows
-    for j = 1:expectedArgs
-        newVarargin{j} = varargin{j}(i, :);
-    end
-    result{i} = funcName(newVarargin{:});
-end
-
-if isnumeric(result{1})
-    result = cell2mat(result);
-end
-
+targetArray = varargin{1};
+varargin = varargin(2:end);
+result = genericApplyToRows(funcName, targetArray, varargin);
+        
 end

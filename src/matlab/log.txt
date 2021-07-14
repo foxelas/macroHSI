@@ -22,3 +22,120 @@ Initialization finished
 --Setting [plotName] to ..\..\..\output\hsi\import_psl\153\0_white_unispectrum_618.
 --Setting [plotName] to ..\..\..\output\hsi\import_psl\153\0_white_bandmax_618.
 --Setting [plotName] to ..\..\..\output\hsi\import_psl\153\0_black_618.
+SetSetting('normalization', 'raw');
+--Setting [normalization] to raw.
+i1 = NormalizeHSI(num2str(147));
+
+imgList = {i1};
+coordinates = [350,300; 200,150];
+descriptionList = {'P1', 'P2'};
+isNormalized = false; 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\import_psl\InitialAnalysis\pointsOnImage.jpn.
+{Index in position 1 exceeds array bounds (must not exceed 240).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 47)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',47,0)">line 47</a>)
+            curves(k,:) = img(coordinates(i, 1),coordinates(i, 2),:);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',47,1)">47  </a>            curves(k,:) = img(coordinates(i, 1),coordinates(i, 2),:);
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+close all 
+experiment = 'sample001';
+SetSetting('experiment', experiment);
+--Setting [experiment] to sample001.
+
+SetSetting('normalization', 'raw');
+--Setting [normalization] to raw.
+i1 = NormalizeHSI(num2str(147));
+
+imgList = {i1};
+coordinates = [ 84, 103; 127, 87; 95, 138; 104, 167];
+descriptionList = {'P1', 'P2'};
+isNormalized = false; 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('containers.Map/subsref')" style="font-weight:bold">containers.Map/subsref</a>
+The specified key is not present in this container.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 28)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',28,0)">line 28</a>)
+    plot(coordinates(i, 2),coordinates(i, 1), 'x', 'MarkerSize', 20, 'color', lineColorMap(num2str(i)), 'LineWidth',
+    5);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',28,1)">28  </a>    plot(coordinates(i, 2),coordinates(i, 1), 'x', 'MarkerSize', 20, 'color', lineColorMap(num2str(i)), 'LineWidth', 5);
+SetSetting('normalization', 'raw');
+--Setting [normalization] to raw.
+i1 = NormalizeHSI(num2str(147));
+
+imgList = {i1};
+coordinates = [ 84, 103; 127, 87; 95, 138; 104, 167];
+descriptionList = {'P1', 'P2', 'P3', 'P4'};
+isNormalized = false; 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('containers.Map/subsref')" style="font-weight:bold">containers.Map/subsref</a>
+The specified key is not present in this container.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 28)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',28,0)">line 28</a>)
+    plot(coordinates(i, 2),coordinates(i, 1), 'x', 'MarkerSize', 20, 'color', lineColorMap(num2str(i)), 'LineWidth',
+    5);
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',28,1)">28  </a>    plot(coordinates(i, 2),coordinates(i, 1), 'x', 'MarkerSize', 20, 'color', lineColorMap(num2str(i)), 'LineWidth', 5);
+if system_dependent('IsDebugMode')==1, dbquit all; end
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+[Warning: Missing names or coordinates] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 21)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',21,0)">line 21</a>)] 
+--Setting [plotName] to ..\..\..\output\hsi\sample001\InitialAnalysis\pointsOnImage.jpn.
+{Index exceeds the number of array elements (2).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('EvaluatePointsOnImage', 'D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m', 52)" style="font-weight:bold">EvaluatePointsOnImage</a> (<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',52,0)">line 52</a>)
+        names{k} = strrep(descriptionList{i}, '-', strcat(num2str(j),' -'));
+} 
+<a href="matlab: opentoline('D:\elena\Google Drive\titech\research\experiments\macroHSI\src\matlab\methods\EvaluatePointsOnImage.m',52,1)">52  </a>        names{k} = strrep(descriptionList{i}, '-', strcat(num2str(j),' -')); 
+if system_dependent('IsDebugMode')==1, dbquit; end
+SetSetting('normalization', 'raw');
+--Setting [normalization] to raw.
+i1 = NormalizeHSI(num2str(147));
+
+imgList = {i1};
+coordinates = [ 84, 103; 127, 87; 95, 138; 104, 167];
+descriptionList = {'P1', 'P2', 'P3', 'P4'};
+isNormalized = false; 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\sample001\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\sample001\InitialAnalysis\sampleCurves_norm.jpn.
+SetSetting('normalization', 'raw');
+--Setting [normalization] to raw.
+i1 = NormalizeHSI(num2str(147));
+
+imgList = {i1};
+coordinates = [ 84, 103; 127, 87; 95, 138; 104, 167];
+descriptionList = {'P1', 'P2', 'P3', 'P4'};
+isNormalized = false; 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\sample001\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\sample001\InitialAnalysis\sampleCurves_norm.jpn.
+targetId = num2str(147); 
+SetSetting('normalization', 'byPixel');
+--Setting [normalization] to byPixel.
+norm1 = NormalizeHSI(targetId);
+
+min_white_minus_black =
+
+   -0.0016
+
+imgList = {norm1};
+isNormalized = true;
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized); 
+--Setting [plotName] to ..\..\..\output\hsi\sample001\InitialAnalysis\pointsOnImage.jpn.
+--Setting [plotName] to ..\..\..\output\hsi\sample001\InitialAnalysis\sampleCurves_raw.jpn.
+
+targetId = num2str(147); 
+SetSetting('normalization', 'raw');
+--Setting [normalization] to raw.
+i1 = NormalizeHSI(targetId);
+
+imgList = {i1};
+coordinates = [ 84, 103; 127, 87; 95, 138; 104, 167];
+descriptionList = {'P1', 'P2', 'P3', 'P4'};
+isNormalized = false; 
+EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
+--Setting [plotName] to ..\..\..\output\hsi\sample001\InitialAnalysis\pointsOnImage.jpn.
