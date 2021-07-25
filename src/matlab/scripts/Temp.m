@@ -1,6 +1,6 @@
 experiment = 'test2020628';
 dataDate = '20210628';
-ImportCalibTriplets(dataDate);
+ImportTriplets(dataDate);
 SetSetting('experiment', experiment);
 
 imgList = {i1, i2};
@@ -41,13 +41,15 @@ isNormalized = true;
 EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized); 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ImportCalibTriplets('20210706');
+%%%% Import Data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ImportTriplets('20210706');
+ImportMacroRGB()
 experiment = 'sample001';
 SetSetting('experiment', experiment);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-targetId = num2str(147); 
+targetId = num2str(147);  % raw backside
 SetSetting('normalization', 'raw');
 i1 = NormalizeHSI(targetId);
 
@@ -65,7 +67,7 @@ EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-targetId = num2str(150); 
+targetId = num2str(150);   % raw surface
 SetSetting('normalization', 'raw');
 i1 = NormalizeHSI(targetId);
 
@@ -83,7 +85,7 @@ EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-targetId = num2str(153); 
+targetId = num2str(153);   % fixed sections
 SetSetting('normalization', 'raw');
 i1 = NormalizeHSI(targetId);
 
@@ -100,7 +102,7 @@ isNormalized = true;
 EvaluatePointsOnImage(imgList, coordinates, descriptionList, isNormalized); 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-targetId = num2str(150); 
+targetId = num2str(150); % raw surface
 SetSetting('normalization', 'byPixel');
 norm1 = NormalizeHSI(targetId);
 
@@ -122,3 +124,30 @@ imshow(GetDisplayImage(norm1));
 imgList = {norm1};
 SetSetting('experiment', 'kmeans-clustering');
 Cluster(imgList, 'kmeans', 3);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+infoStruct = GetSampleAssosiatedInfo('001');
+
+% Registration 
+targetId = num2str(infoStruct.RawHSIID); % raw surface
+SetSetting('normalization', 'byPixel');
+norm1 = NormalizeHSI(targetId);
+
+front = LoadMacroRGB(infoStruct.FrontMacroID, 'front');
+Register(front, norm1, 'front2hsi');
+
+cut = LoadMacroRGB(infoStruct.CutMacroID, 'cut');
+Register(front, cut, 'cut2front');
+
+section = LoadMacroRGB(infoStruct.SectionMacroID, 'section');
+Register(cut, section, 'section2cut');
+
+I2 = rgb2gray(section);
+level = 0.4;
+BW = im2bw(I2,level);
+D = -bwdist(~BW);
+D(~BW) = -Inf;
+L = watershed(D); figure; imshow(label2rgb(L,'jet','w'));
+mask = L>1; figure; imshow(mask);
+v = imclose(mask, strel('disk', 1)); figure; imshow(v);
+d = edge(v, 'Canny');figure; imshow(d);

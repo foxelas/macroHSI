@@ -8,12 +8,12 @@ if nargin < 4
     blackIsCapOn = false;
 end
 
-baseDir = DirMake(GetSetting('matdir'), strcat(GetSetting('database'), 'Triplets\'));
+basedir = GetMatSaveFolder('Triplets');
 
 %% Target image
 fcTarget = GetFileConditions(content, target);
 [filename, tableId] = GetFilename(fcTarget{:});
-saveName = fullfile(baseDir, num2str(tableId));
+saveName = fullfile(basedir, num2str(tableId));
 [spectralData, ~, ~] = LoadH5Data(filename);
 saveFolder = num2str(tableId); 
 

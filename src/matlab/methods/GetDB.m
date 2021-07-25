@@ -1,11 +1,28 @@
-function dataTable = GetDB()
-%GetDB returns the db structure as a table
+function dataTable = GetDB(tableName)
+%GetDB returns a DB table as a matlab table
 %
 %   Usage:
 %   dataTable = GetDB()
+%   dataTable = GetDB('macroRGB')
 
-infile = fullfile(GetSetting('datasetSettingsDir'), strcat(GetSetting('database'), 'DB.xlsx'));
+if nargin < 1 
+    tableName = 'DataInfo';
+end 
+
+switch tableName 
+    case 'MacroRGB'
+        doubleOpts = {'ID', 'CaptureDate'};
+    case 'DataInfo'
+        doubleOpts = {'ID','IntegrationTime','IsUnfixed','IsBackside','CaptureDate','CaptureDate'};
+    otherwise
+        error('Unsupported table name');
+end 
+
+fullTableName = strcat(GetSetting('database'), 'DB', tableName, 'Table', '.xlsx'); 
+
+infile = fullfile(GetSetting('datasetSettingsDir'),fullTableName);
 opts = detectImportOptions(infile);
-opts = setvartype(opts,{'ID','IntegrationTime','IsUnfixed','IsBackside','CaptureDate', 'SampleID'},'double');
-dataTable = readtable(infile, opts); %'Sheet', 'capturedData'
+opts = setvartype(opts,doubleOpts,'double');
+dataTable = readtable(infile, opts); 
+
 end

@@ -12,7 +12,7 @@ if nargin < 2 || isempty(option)
     option = GetSetting('normalization');
 end
 
-basedir = fullfile(GetSetting('matdir'), strcat(GetSetting('database'), 'Triplets'), targetName);
+basedir = strcat(GetMatSaveFolder('Triplets'), targetName);
 
 targetFilename = strcat(basedir, '_target.mat');
 load(targetFilename, 'spectralData');
