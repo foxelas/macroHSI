@@ -17,6 +17,7 @@ switch regType
         static = PrepareRGB(img2);
         method = 'controlPoints'; %'regconfig'; %'surf';
         [tform, recovered] = GetRegistrationTransform(static, moving, method);    
+
     case 'section2cut'
         moving = PrepareRGB(img1); 
         static = PrepareRGB(img2);
