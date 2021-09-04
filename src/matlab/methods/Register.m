@@ -19,10 +19,10 @@ switch regType
         [tform, recovered] = GetRegistrationTransform(static, moving, method);    
 
     case 'section2cut'
-        moving = PrepareRGB(img1); 
-        static = PrepareRGB(img2);
-        method = 'controlPoints'; %'regconfig'; %'surf';
-        [tform, recovered] = GetRegistrationTransform(static, moving, method); 
+        topEdges = ExtractEdges(img2, 'top');
+        projectedEdges = ProjectEdges(topEdges, 'trapezoid');
+        method = 'manual';
+        GetRegistrationTransform(method);
         
     case 'hsi2section'
     otherwise
