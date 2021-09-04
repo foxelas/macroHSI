@@ -1,8 +1,8 @@
 function [] = plotPointsOnImage(baseImage, xPoints, yPoints, isCombination, fig)
 %%PLOTPOINTSONIMAGE plots a set of point coordinates with text and markers
-%%on a base image 
+%%on a base image
 %
-%   Usage: 
+%   Usage:
 %   plotPointsOnImage(baseImage, xPoints, yPoints, true, fig);
 
 if isCombination
@@ -10,18 +10,18 @@ if isCombination
     xx = xx(:);
     yy = yy(:);
 else
-    xx = xPoints; 
+    xx = xPoints;
     yy = yPoints;
 end
-    
+
 imshow(baseImage);
 hold on;
 for i = 1:length(xx)
     plot(xx(i), yy(i), 'rx', 'MarkerSize', 20, 'LineWidth', 5);
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     textStr = sprintf('P%d(%d,%d)', i, xx(i), yy(i));
+    %%%%%%%%%%%%%%%%%%%%%%%%%%
+    %     textStr = sprintf('P%d(%d,%d)', i, xx(i), yy(i));
     textStr = sprintf('P%d', i);
-    text(xx(i)- 50, yy(i) + 50, textStr);
+    text(xx(i)-50, yy(i)+50, textStr);
 end
 hold off;
 
@@ -31,4 +31,4 @@ if ~contains(getSetting('plotName'), 'point')
 end
 savePlot(fig);
 
-end 
+end

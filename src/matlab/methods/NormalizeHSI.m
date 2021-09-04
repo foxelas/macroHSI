@@ -64,27 +64,27 @@ if useBlack
         whiteReflectance = whiteReflectance(any(cropMask, 2), any(cropMask, 1), :);
         warning('Crop the image value: white');
     end
-    
-    %% Cleanup wrong spectral values before normalization 
+
+    %% Cleanup wrong spectral values before normalization
     spectralData = max(spectralData, 0);
 
-%     spectralDataRow = reshape(spectralData, [m*n, w]);
-%     maxSpectrum = max(reshape(whiteReflectance, [m*n, w]), [], 1);
-%     maxSpectrum = min(maxSpectrum, 2* 0.001);
-%     spectralDataRow = min(spectralDataRow, maxSpectrum);
-%     spectralData = reshape(spectralDataRow, [m, n, w]);
+    %     spectralDataRow = reshape(spectralData, [m*n, w]);
+    %     maxSpectrum = max(reshape(whiteReflectance, [m*n, w]), [], 1);
+    %     maxSpectrum = min(maxSpectrum, 2* 0.001);
+    %     spectralDataRow = min(spectralDataRow, maxSpectrum);
+    %     spectralData = reshape(spectralDataRow, [m, n, w]);
 
     %% Normalization
     spectralData = NormalizeImage(spectralData, whiteReflectance, blackReflectance);
     spectralData = min(spectralData, 2);
-    
-    %% Further check 
+
+    %% Further check
     spectralData = max(spectralData, 0);
-    
-    %% Crop usable dimensions 
+
+    %% Crop usable dimensions
     if strcmp(option, 'byPixel')
         spectralData = AdjustRange(spectralData);
-    end   
+    end
 
 end
 

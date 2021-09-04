@@ -18,16 +18,16 @@ if GetSetting('isTest')
         warning('Setting default date: 20210127.');
     end
     SetSetting('dataDate', dataDate);
-    
+
     testDir = fullfile(GetSetting('mspiDir'), GetSetting('hsiTestDir'));
     indir = fullfile(testDir, strcat('saitama', dataDate, '_test'), 'h5');
     if exist('indirFolder', 'var') && ~isempty(indirFolder)
         indir = fullfile(testDir, strcat('saitama', dataDate, '_test'), indirFolder, 'h5');
-    end  
-else 
+    end
+else
     hsiSkinDir = fullfile(GetSetting('mspiDir'), GetSetting('hsiDataDir'));
     indir = fullfile(hsiSkinDir, 'h5');
-end 
+end
 SetSetting('datadir', indir);
 
 if exist('database', 'var')

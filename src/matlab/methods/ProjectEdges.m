@@ -1,7 +1,7 @@
 function projectedEdges = ProjectEdges(edgesImage, method)
-% ProjectEdges 
+% ProjectEdges
 %
 %   Usage:
 %   projectedEdges = ProjectEdges(topEdges, 'trapezoid');
 
-end 
+end

@@ -1,5 +1,5 @@
 function [] = PlotClusterCentroids(C, fig)
-% PlotClusterCentroids plots the centroid clusters after clustering 
+% PlotClusterCentroids plots the centroid clusters after clustering
 %
 %   Usage:
 %   Plots(2, @PlotClusterCentroids, C);
@@ -9,7 +9,7 @@ x = GetWavelengths(w);
 colors = jet(q);
 hold on;
 for i = 1:q
-    plot(x, C(i, :), 'DisplayName', strcat('Centroid ', num2str(i)), 'LineWidth', 2, 'Color', colors(i,:));
+    plot(x, C(i, :), 'DisplayName', strcat('Centroid ', num2str(i)), 'LineWidth', 2, 'Color', colors(i, :));
 end
 hold off;
 legend('Location', 'NorthWest');
@@ -21,4 +21,4 @@ SetSetting('plotName', fullfile(GetSetting('savedir'), GetSetting('experiment'),
 
 SavePlot(fig);
 
-end 
+end

@@ -24,7 +24,7 @@ end
 
 if ~GetSetting('isTest')
     configuration = [];
-end 
+end
 
 setId = true(numel(dataTable.ID), 1);
 

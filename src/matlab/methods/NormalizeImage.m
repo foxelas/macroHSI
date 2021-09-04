@@ -11,9 +11,9 @@ if nargin < 4
 end
 
 enableSmoothWhite = false;
-if enableSmoothWhite 
+if enableSmoothWhite
     white = ApplySmoothingFilterOnHSI(white);
-end 
+end
 
 switch method
     case 'scaling'

@@ -5,7 +5,7 @@ function [T, adjusted, alphaCoeff] = CompareSpectra(expected, measured, lineName
 %   comparison differences for three metrics, Goodness-Of-Fit, Normalized
 %   Mean Square Error and Root Mean Square Error
 %
-%   [T, adjusted, alpha] = CompareSpectra(expected, measured, lineNames) 
+%   [T, adjusted, alpha] = CompareSpectra(expected, measured, lineNames)
 %   returns table T and also adjusted values after adjustment
 %
 
@@ -16,7 +16,7 @@ Plots(5, @PlotColorChartSpectra, measured, lineNames, 'measured');
 m = size(expected, 2);
 x = GetWavelengths(m, 'babel');
 
-% Limit to Range [420,730]nm 
+% Limit to Range [420,730]nm
 measured = AdjustRange(measured);
 expected = AdjustRange(expected);
 measuredDecim = AdjustRange(measured, 'standard');

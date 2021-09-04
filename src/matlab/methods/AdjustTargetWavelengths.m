@@ -5,8 +5,8 @@ function [outSpectrum, newWavelengths] = AdjustTargetWavelengths(inSpectrum, opt
 %   Usage:
 %   [outSpectrum, newWavelengths] = AdjustTargetWavelengths(inSpectrum, 'add') adds padding to inSpectrum
 %   [outSpectrum, newWavelengths] = AdjustTargetWavelengths(inSpectrum, 'del') removes padding from inSpectrum
-%   [outSpectrum, newWavelengths] = AdjustTargetWavelengths(inSpectrum, 'crop') crops to range 420:730nm 
-%   [outSpectrum, newWavelengths] = AdjustTargetWavelengths(inSpectrum, 'standard') crops to 36 wavelengths 
+%   [outSpectrum, newWavelengths] = AdjustTargetWavelengths(inSpectrum, 'crop') crops to range 420:730nm
+%   [outSpectrum, newWavelengths] = AdjustTargetWavelengths(inSpectrum, 'standard') crops to 36 wavelengths
 
 
 if nargin < 2
@@ -48,13 +48,13 @@ switch options
             outSpectrum = inSpectrum;
         end
         newWavelengths = GetWavelengths(401);
-        
+
     case 'crop'
         x = GetWavelengths(m);
         ids = x >= 420 & x <= 730;
         newWavelengths = x(ids);
         outSpectrum = inSpectrum(ids);
-        
+
     case 'standard'
         spectralWavelengths = 380:10:730;
         x = GetWavelengths(m);
@@ -62,7 +62,7 @@ switch options
         idx = nonzeros(idx);
         outSpectrum = inSpectrum(idx);
         newWavelengths = spectralWavelengths;
-        
+
     otherwise
         error('Unsupported options');
 end

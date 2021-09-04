@@ -15,7 +15,7 @@ end
 
 if (sum(contains(lineNames, 'white 9.5 (.05 D)')) == 0)
     adjustmentMethod = 'noAdjustment';
-end 
+end
 switch adjustmentMethod
     case 'toRatio'
         white95Idx = strcmp(lineNames, 'white 9.5 (.05 D)');
@@ -27,7 +27,7 @@ switch adjustmentMethod
     case 'fixWhiteLevel'
         white95Idx = strcmp(lineNames, 'white 9.5 (.05 D)');
         white95Val = 0.9;
-        
+
         if size(inSpectra, 2) == 36
             startIdx = 36 - 20;
         elseif size(inSpectra, 2) == 17

@@ -25,7 +25,7 @@ if nargin < 7
     specialTarget = '';
 end
 
-if ~isempty(integrationTime) 
+if ~isempty(integrationTime)
     initialIntegrationTime = integrationTime;
 end
 

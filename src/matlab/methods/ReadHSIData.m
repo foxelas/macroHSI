@@ -15,7 +15,7 @@ fcTarget = GetFileConditions(content, target);
 [filename, tableId] = GetFilename(fcTarget{:});
 saveName = fullfile(basedir, num2str(tableId));
 [spectralData, ~, ~] = LoadH5Data(filename);
-saveFolder = num2str(tableId); 
+saveFolder = num2str(tableId);
 
 if ~exist(strcat(saveName, '_target.mat'), 'file') || ~exist(strcat(saveName, '_black.mat'), 'file') || ~exist(strcat(saveName, '_white.mat'), 'file')
     figure(1);
@@ -39,7 +39,7 @@ if ~exist(strcat(saveName, '_target.mat'), 'file') || ~exist(strcat(saveName, '_
         %%UniSpectrum
         uniSpectrum = GetSpectraFromMask(white);
         SetSetting('plotName', DirMake(GetSetting('savedir'), GetSetting('experiment'), saveFolder, strcat('0_white_unispectrum_', num2str(GetSetting('integrationTime')))));
-        Plots(4, @PlotSpectra, uniSpectrum, {'99%-white'}, wavelengths,  'Spetral Measurement (a.u.)', 'Reflectance Spectrum of White Balance Sheet', {'b'});
+        Plots(4, @PlotSpectra, uniSpectrum, {'99%-white'}, wavelengths, 'Spetral Measurement (a.u.)', 'Reflectance Spectrum of White Balance Sheet', {'b'});
 
         %%BandMax
         [m, n, w] = size(white);

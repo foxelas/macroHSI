@@ -1,6 +1,6 @@
 function [] = PlotDataClusters(X, dimredMethod, labels, C, fig)
 %PlotDataClusters shows a reduced dimension view of the dataset using
-%specific lalbels and also cluster centroids when provided 
+%specific lalbels and also cluster centroids when provided
 %
 %   Usage:
 %   Plots(1, @PlotDataClusters, X, 'tsne', labels, C);
@@ -17,7 +17,7 @@ hold on;
 for i = 1:q
     labId = labels == i;
     vals = scores(labId, :);
-    scatter3(vals(:, 1), vals(:, 2), vals(:, 3), 'MarkerEdgeColor', 'k', 'MarkerFaceColor', clusterColor(i,:));
+    scatter3(vals(:, 1), vals(:, 2), vals(:, 3), 'MarkerEdgeColor', 'k', 'MarkerFaceColor', clusterColor(i, :));
 end
 
 if showsCentroids
@@ -26,11 +26,11 @@ if showsCentroids
         scatter3(transC(1), transC(2), transC(3), 30, 'k', 'd', 'filled');
         text(transC(1), transC(2), transC(3), strcat('C', num2str(i)))
     end
-end 
+end
 
 hold off;
 grid on;
 view(40, 35);
 
 SavePlot(fig);
-end 
+end

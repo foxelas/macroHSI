@@ -5,24 +5,24 @@ function dataTable = GetDB(tableName)
 %   dataTable = GetDB()
 %   dataTable = GetDB('macroRGB')
 
-if nargin < 1 
+if nargin < 1
     tableName = 'DataInfo';
-end 
+end
 
-switch tableName 
+switch tableName
     case 'MacroRGB'
         doubleOpts = {'ID', 'CaptureDate'};
     case 'DataInfo'
-        doubleOpts = {'ID','IntegrationTime','IsUnfixed','IsBackside','CaptureDate','CaptureDate'};
+        doubleOpts = {'ID', 'IntegrationTime', 'IsUnfixed', 'IsBackside', 'CaptureDate', 'CaptureDate'};
     otherwise
         error('Unsupported table name');
-end 
+end
 
-fullTableName = strcat(GetSetting('database'), 'DB', tableName, 'Table', '.xlsx'); 
+fullTableName = strcat(GetSetting('database'), 'DB', tableName, 'Table', '.xlsx');
 
-infile = fullfile(GetSetting('datasetSettingsDir'),fullTableName);
+infile = fullfile(GetSetting('datasetSettingsDir'), fullTableName);
 opts = detectImportOptions(infile);
-opts = setvartype(opts,doubleOpts,'double');
-dataTable = readtable(infile, opts); 
+opts = setvartype(opts, doubleOpts, 'double');
+dataTable = readtable(infile, opts);
 
 end

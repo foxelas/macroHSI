@@ -32,12 +32,12 @@ if nargin < 3 || isempty(selectedPatches)
     selectedPatches = 1:length(patchNames);
 end
 
-if nargin >= 4 
+if nargin >= 4
     standardSpectra = altExpectedSpectra;
-else 
+else
     standardSpectra = expectedSpectra(selectedPatches, :);
-end 
-patchNames = patchNames(selectedPatches);    
+end
+patchNames = patchNames(selectedPatches);
 
 option = GetSetting('normalization');
 
@@ -45,7 +45,7 @@ fileConditions = GetFileConditions('colorchart', targetName);
 [filename, tableId] = GetFilename(fileConditions{:});
 spectralData = NormalizeHSI(num2str(tableId));
 dispImage = GetDisplayImage(spectralData, 'rgb');
-wavelengths = GetWavelengths(size(spectralData,3));
+wavelengths = GetWavelengths(size(spectralData, 3));
 
 [colorMasks, chartMask] = GetColorchartMasks(dispImage, allowRoiSelection, filename);
 actualSpectralVals = GetSpectrumCurves(spectralData, colorMasks, chartMask);

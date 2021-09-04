@@ -1,27 +1,27 @@
 function [] = PlotSpectra(curves, names, wavelengths, yLabel, figTitle, colors, fig)
-%PlotSpectra plots a collection of spectrum curves 
+%PlotSpectra plots a collection of spectrum curves
 %
-%   Usage: 
+%   Usage:
 %   PlotSpectra(curves, names, wavelengths, yLabel, figTitle, fig)
 
 [curveN, xN] = size(curves);
 
-if nargin < 2 
-    names = cell(curveN,1);
+if nargin < 2
+    names = cell(curveN, 1);
     for i = 1:curveN
-        names{i} = 's' + num2str(i);
-    end 
-end 
+        names{i} = 's' +num2str(i);
+    end
+end
 
-if nargin < 3 
+if nargin < 3
     wavelengths = getWavelengths(xN);
-end 
+end
 
-if nargin < 4 
+if nargin < 4
     yLabel = 'Measured reflectance (a.u.)';
-end 
+end
 
-if nargin < 5 
+if nargin < 5
     figTitle = '';
 end
 
@@ -34,18 +34,18 @@ if nargin < 6
     end
 end
 
-    
-x = wavelengths; 
-h = zeros(curveN,1);
+
+x = wavelengths;
+h = zeros(curveN, 1);
 for i = 1:curveN
-    spectrum = curves(i,:);
+    spectrum = curves(i, :);
     hold on
     h(i) = plot(x, spectrum, 'DisplayName', names{i}, 'Color', colors{i}, 'LineWidth', 1.5);
     hold off;
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% if hasReflectanceRatio 
+% if hasReflectanceRatio
 %     yline(1,'--','100%','LineWidth',3, 'DisplayName', 'Max Value');
 % end
 
@@ -64,4 +64,4 @@ ax.YAxis.Exponent = 0;
 
 SavePlot(fig);
 
-end 
+end

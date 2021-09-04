@@ -17,7 +17,7 @@ end
 
 switch option
     case 'raw'
-        
+
         if m == 401
             x = 380:780;
         elseif m == 36

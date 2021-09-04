@@ -31,9 +31,9 @@ switch method
         if (z < 401)
             v = GetWavelengths(z, 'index');
             illumination = illumination(v);
-            xyz = xyz(v,:);
+            xyz = xyz(v, :);
         end
-        
+
         normConst = double(max(max(colImage)));
         colImage = colImage ./ normConst;
         colImage = bsxfun(@times, colImage, illumination);

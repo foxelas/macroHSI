@@ -34,9 +34,9 @@ end
 
 function currentFile = AdjustFilename(filename, targetDir)
 
-if isempty(targetDir) 
+if isempty(targetDir)
     indir = GetSetting('datadir');
-    
+
     if GetSetting('isTest')
         filenameParts = strsplit(filename, '_');
         dataDate = filenameParts{1};
@@ -47,13 +47,13 @@ if isempty(targetDir)
             oldDate = filenameParts{1};
             indir = strrep(indir, oldDate, dataDate);
         end
-    end 
-else 
+    end
+else
     indir = targetDir;
 end
 currentFile = fullfile(indir, filename);
 if ~contains(currentFile, '.h5')
     currentFile = strcat(currentFile, '.h5');
-end 
+end
 
 end
