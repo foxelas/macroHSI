@@ -10,6 +10,11 @@ if nargin < 4
     method = 'scaling';
 end
 
+enableSmoothWhite = false;
+if enableSmoothWhite
+    white = ApplySmoothingFilterOnHSI(white);
+end
+
 switch method
     case 'scaling'
         denom = white - black;
@@ -20,15 +25,16 @@ switch method
         error('Unsupported normalization method.');
 end
 
-figure;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%NeedToDisable%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+figure(3);
+clf;
 hold on;
 plot(380:780, mean(reshape(white, [size(white, 1) * size(white, 2), size(white, 3)])), 'DisplayName', 'Average White');
 plot(380:780, mean(reshape(black, [size(black, 1) * size(black, 2), size(black, 3)])), 'DisplayName', 'Average Black');
 
 plot(380:780, min(reshape(white, [size(white, 1) * size(white, 2), size(white, 3)])), 'DisplayName', 'Min White');
 plot(380:780, min(reshape(black, [size(black, 1) * size(black, 2), size(black, 3)])), 'DisplayName', 'Min Black');
-
 hold off;legend
-min(white(:)-black(:))
+min_white_minus_black = min(white(:)-black(:))
 
 end

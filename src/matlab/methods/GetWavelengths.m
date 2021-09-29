@@ -17,7 +17,7 @@ end
 
 switch option
     case 'raw'
-        splitWavelength = GetSetting('splitWavelength');
+
         if m == 401
             x = 380:780;
         elseif m == 36
@@ -25,13 +25,19 @@ switch option
         elseif m == 32
             x = 420:10:730; % range [420,730];
         elseif m == 17
+            splitWavelength = GetSetting('splitWavelength');
             x = 380:10:splitWavelength;
         elseif m == 19
+            splitWavelength = GetSetting('splitWavelength');
             x = (splitWavelength + 1):10:730;
         elseif m == 161
+            splitWavelength = GetSetting('splitWavelength');
             x = 380:splitWavelength;
         elseif m == 240
+            splitWavelength = GetSetting('splitWavelength');
             x = (splitWavelength + 1):780;
+        elseif m == 311
+            x = 420:730;
         else
             error('Unsupported wavelength range');
         end

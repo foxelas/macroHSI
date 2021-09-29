@@ -35,7 +35,7 @@ outRow = CheckOutRow(outRow, configuration, content, integrationTime, specialTar
 filename = outRow.Filename{1};
 tableId = outRow.ID;
 
-if outRow.IntegrationTime ~= initialIntegrationTime
+if ~isempty(integrationTime) && outRow.IntegrationTime ~= initialIntegrationTime
     setSetting('integrationTime', integrationTime);
 end
 
